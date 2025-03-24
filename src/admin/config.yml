@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: lilnoun1112/theworks
+  branch: main
+  base_url: https://netlify-cms-oauth-delta.vercel.app
+
+media_folder: /static/img
+public_folder: /img
+
+logo_url: https://www.theworks.info/images/theworks-black.png
+
+collections:
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "src/portfolio"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "date", label: "Date", widget: "date" }
+      - { name: "tags", label: "Tags", widget: "select", multiple: true, options: ["Web", "UIUX", "Merch", "Logo", "Branding", "Frontend", "Fonts", "Case study", "Web3"] }
+      - { name: "highlight", label: "Highlight", widget: "select", multiple: false, options: ["Primary", "Category"] }
+      - { name: "preview", label: "Preview", widget: "string" }
+      - { name: "image-preview", label: "Preview Image", widget: "image", required: false}
+      - { name: "video-preview", label: "Preview Video", widget: "file", required: false}
+      - { name: "image-hero", label: "Hero Image", widget: "image" }
+      - { name: "what", label: "The What", widget: "string" }
+      - { name: "how", label: "The How", widget: "string" }
+      - { name: "challenges", label: "Challenges", widget: "string" }
+      - { name: "body", label: "Body", widget: "markdown", required: false}
+
+

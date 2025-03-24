@@ -1,0 +1,34 @@
+lockdown-install.js:1 Removing unpermitted intrinsics
+alq7grm.css:14 
+        
+        
+       GET https://p.typekit.net/p.css?s=1&k=alq7grm&ht=tk&f=25757&a=1982555&app=typekit&e=css net::ERR_BLOCKED_BY_ADBLOCKER
+header-scroll.js:1 Header scroll script loaded!
+header-scroll.js:4 DOMContentLoaded fired!
+movesmooth.js:2 movesmooth.js loaded successfully!
+movesmooth.js:18 Found 9 buttons, adding FLIP animation logic...
+reload-client.js:21 [11ty][07:54:45.778 UTC] Connected
+movesmooth.js:61 Scroll event fired! Current scroll position: 2
+movesmooth.js:67 📢 Scrolling up – reversing FLIP...
+movesmooth.js:21 ⚡ Capturing initial button positions...
+movesmooth.js:40 ❌ Removing .scrolled, waiting for flex transition...
+movesmooth.js:61 Scroll event fired! Current scroll position: 7
+movesmooth.js:67 📢 Scrolling up – reversing FLIP...
+movesmooth.js:21 ⚡ Capturing initial button positions...
+movesmooth.js:40 ❌ Removing .scrolled, waiting for flex transition...
+movesmooth.js:61 Scroll event fired! Current scroll position: 14
+movesmooth.js:61 Scroll event fired! Current scroll position: 24
+movesmooth.js:61 Scroll event fired! Current scroll position: 37
+movesmooth.js:61 Scroll event fired! Current scroll position: 51
+movesmooth.js:61 Scroll event fired! Current scroll position: 65
+movesmooth.js:61 Scroll event fired! Current scroll position: 78
+movesmooth.js:61 Scroll event fired! Current scroll position: 88
+movesmooth.js:61 Scroll event fired! Current scroll position: 95
+movesmooth.js:61 Scroll event fired! Current scroll position: 99
+movesmooth.js:61 Scroll event fired! Current scroll position: 100
+movesmooth.js:45 ♻ Capturing new layout after flex transition...
+movesmooth.js:53 🚀 Reverse FLIP started
+movesmooth.js:45 ♻ Capturing new layout after flex transition...
+movesmooth.js:54 ✅ Reverse FLIP complete
+movesmooth.js:53 🚀 Reverse FLIP started
+movesmooth.js:54 ✅ Reverse FLIP complete

@@ -1,0 +1,96 @@
+---
+title: Zylag Portfolio
+layout: 'base.njk'
+---
+<div class="nav">
+    <a class="nav-item works" href=""><span class="nav-span">w</span>orks</a>
+    <a class="nav-item about" href=""><span class="nav-span">a</span>bout</a>
+    <a class="nav-item kontakt" href=""><span class="nav-span" style="margin-right: 4px;">k</span>ontakt</a>
+</div>
+<div class="content">
+    <div class="header">
+        <div class="column-header-logo">
+            <div class="logo"><img style="width: 48px;" src="images/logo.svg"></div>
+        </div>
+        <div class="line-top" style="z-index: 30; width: 150vw; right: -25vw;"></div>
+        <div class="column-header">
+            <div class="header-int">
+                <div class="header-text">
+                    <h1 class="header-text-int" style="width: 700px; top:65px">Hi I'm zylag</h1>
+                    <p class="header-text-int" style="bottom:65px">Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet .</p>
+                </div>
+                    <div class="header-buttons">
+                        <div class="header-buttons-wrap">
+                            <div class="button-secondary"><span class="button-label">Web</span></div>
+                            <div class="button-secondary"><span class="button-label">UIUX</span></div>
+                            <div class="button-secondary"><span class="button-label">Merch</span></div>
+                            <div class="button-secondary"><span class="button-label">Logo</span></div>
+                            <div class="button-secondary"><span class="button-label">Web3</span></div>
+                            <div class="button-secondary"><span class="button-label">Branding</span></div>
+                            <div class="button-secondary"><span class="button-label">Frontend</span></div>
+                            <div class="button-secondary"><span class="button-label">Fonts</span></div>
+                            <div class="button-secondary"><span class="button-label">Case study</span></div>
+                        </div>
+                    </div>
+            </div>
+            <div class="line-bottom"></div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="column-logo"></div>
+    <div class="column-main">
+        {% set count = 0 %}
+        {%- for post in collections.portfolio | reverse -%}
+          {% if count < 1 %}
+            <a href="{{ post.url }}" class="article-highlight">
+        
+
+              {% if post.data.video-preview %}
+                <video class="highlight-video" muted playsinline preload="auto">
+                  <source src="{{ post.data['video-preview'] }}" type="video/mp4" />
+                </video>
+                <canvas class="highlight-canvas"></canvas>
+        
+
+              {% elif post.data.image-preview %}
+                <img class="highlight-image" src="{{ post.data['image-preview'] }}" alt="Preview for {{ post.data.title }}">
+        
+              {% endif %}
+        
+              <div class="highlight-textbox">
+                <h2>{{ post.data.title }}</h2>
+                <div class="label-pill">{{ post.data.tags }}</div>
+                <p>{{ post.data.preview }}</p>
+                <div class="button-primary"><span class="button-label">Read</span></div>
+              </div>
+        
+            </a>
+            {% set count = count + 1 %}
+          {% endif %}
+        {%- endfor -%}
+        
+        <div class="spacer">
+            <div class="line-top" style="top: -1px;"></div>
+            <div class="line-bottom" style="bottom: -1px;"></div>
+        </div>
+        <div class="article-box">
+            <div class="article-highlight"></div>
+            <div class="article-highlight"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+<script src="../js/header-scroll.js"></script>
+<script src="../js/header-scroll-gsap.js"></script>
+<script src="../js/scroll-drag.js"></script>
+<script src="../js/hover-play.js"></script>
+
+
+    
