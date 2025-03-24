@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: lilnoun1112/theworks
+  name: git-gateway
   branch: main
-  base_url: https://netlify-cms-oauth-delta.vercel.app
 
 media_folder: /static/img
 public_folder: /img
