@@ -5,9 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Content Manager</title>
+    <!-- Include Netlify Identity widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Decap CMS -->
+    <!-- Include Decap CMS -->
     <script src="https://cdn.jsdelivr.net/npm/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <!-- Custom Preview Template -->
+    <script type="module">
+      import ArticlePreview from './preview-templates/article-preview.js';
+
+      const collections = ['portfolio'];
+
+      collections.forEach((collection) => {
+        CMS.registerPreviewTemplate(collection, ArticlePreview);
+      });
+
+      // Apply styles for preview
+      CMS.registerPreviewStyle('/styles.css');
+    </script>
   </body>
 </html>
