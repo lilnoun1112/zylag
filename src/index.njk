@@ -46,22 +46,28 @@ layout: 'base.njk'
           {% if count < 1 %}
             <a href="{{ post.url }}" class="article-highlight">
         
-
-              {% if post.data.video-preview %}
+              {# === If video-preview is provided === #}
+              {% if post.data["video-preview"] %}
                 <video class="highlight-video" muted playsinline preload="auto">
-                  <source src="{{ post.data['video-preview'] }}" type="video/mp4" />
+                  <source src="/static{{ post.data["video-preview"] }}" type="video/mp4" />
                 </video>
                 <canvas class="highlight-canvas"></canvas>
         
-
-              {% elif post.data.image-preview %}
-                <img class="highlight-image" src="{{ post.data['image-preview'] }}" alt="Preview for {{ post.data.title }}">
+              {# === Else if image-preview is provided === #}
+              {% elif post.data["image-preview"] %}
+                <img class="highlight-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
         
               {% endif %}
         
               <div class="highlight-textbox">
                 <h2>{{ post.data.title }}</h2>
-                <div class="label-pill">{{ post.data.tags }}</div>
+                <div class="label-box">
+                    {% if post.data.tags %}
+                        {% for tag in post.data.tags %}
+                        <div class="label-pill">{{ tag }}</div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
                 <p>{{ post.data.preview }}</p>
                 <div class="button-primary"><span class="button-label">Read</span></div>
               </div>
@@ -70,6 +76,7 @@ layout: 'base.njk'
             {% set count = count + 1 %}
           {% endif %}
         {%- endfor -%}
+        
         
         <div class="spacer">
             <div class="line-top" style="top: -1px;"></div>

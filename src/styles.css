@@ -576,6 +576,12 @@ p{
     letter-spacing: -0.6px;
 }
 
+.label-box{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
 @media only screen and (min-width:1800px){
     .content{
         padding-right: 0px;
