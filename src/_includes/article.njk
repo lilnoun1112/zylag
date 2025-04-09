@@ -29,14 +29,29 @@ layout: 'base.njk'
         <div class="textbox">
           <h2>{{ title }}</h2>
           <div class="label-box">
-              {% if post.data.tags %}
-                  {% for tag in post.data.tags %}
-                  <div class="label-pill">{{ tag }}</div>
-                  {% endfor %}
-              {% endif %}
+            {% if tags %}
+              {% for tag in tags %}
+                <div class="label-pill">{{ tag }}</div>
+              {% endfor %}
+            {% endif %}
           </div>
-        </div>
+          <p class="fine">{{ minutes }} minute read</p>
+          <div class="summary-box">
+            <h3 class="summary">The What</h3>
+            <p class="fine">{{ what }}</p>
+          </div>
+          <div class="summary-box">
+            <h3 class="summary">The How</h3>
+            <p class="fine">{{ how }}</p>
+          </div>
+          <div class="summary-box">
+            <h3 class="summary">The Challenge</h3>
+            <p class="fine">{{ challenges }}</p>
+          </div>
+        
         {{ content | safe }}
+
+        </div>
       </div>
 
 

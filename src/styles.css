@@ -78,7 +78,7 @@ h3{
     color: var(--foreground);
     font-size: 24px;
     line-height: 130%; 
-    letter-spacing: -3px;
+    letter-spacing: -1px;
     text-transform: uppercase;
     margin: 0;
 }
@@ -959,6 +959,37 @@ footer{
     object-fit: cover;
     border-radius: 16px;
     background-color: #5F5B61;
+}
+
+.articlebox{
+    display: flex;
+    text-align: left;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    align-self: stretch;
+}
+
+.summary-box{
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.fine{
+    display: flex;
+    flex: 1 0 0;
+    font-size: 13px;
+    line-height: 20px; 
+    text-align: left;
+}
+
+.summary{
+    text-align: left;
+    width: 265px;
 }
 
 @media only screen and (min-width:1800px){
