@@ -3,7 +3,7 @@ console.log("Header scroll script loaded!"); // First check
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOMContentLoaded fired!"); // Second check
 
-    const elements = document.querySelectorAll(".header-text, .header-text-int, .column-header");
+    const elements = document.querySelectorAll(".header-text, .header-text-int, .column-header, .top-blur, .nav");
 
 
     function toggleScrolledClass() {

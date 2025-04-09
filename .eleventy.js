@@ -21,6 +21,12 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("testimonials", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/testimonials/*.md").sort((a, b) => {
+      return new Date(b.date) - new Date(a.date);  // Sort by date, most recent first
+    });
+  });
+
   eleventyConfig.addCollection("recentPosts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/*.md")
       .sort((a, b) => b.date - a.date) // Sort by date, newest first

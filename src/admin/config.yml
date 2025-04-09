@@ -25,6 +25,19 @@ collections:
       - { name: "what", label: "The What", widget: "string" }
       - { name: "how", label: "The How", widget: "string" }
       - { name: "challenges", label: "Challenges", widget: "string" }
+      - { name: "minutes", label: "Minutes to read", widget: "number", value_type: "int" }
       - { name: "body", label: "Body", widget: "markdown", required: false}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/testimonials"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: "text", label: "Text", widget: "string" }
+      - { name: "name", label: "Name", widget: "string" }
+      - { name: "position", label: "Position", widget: "string" }
+      - { name: "affiliation", label: "Affiliation", widget: "string" }
+      - { name: "icon", label: "Icon", widget: "image"}
 
 

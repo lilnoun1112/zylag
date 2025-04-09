@@ -57,14 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Header height change
                 gsap.to(header, {
-                    height: shouldBeScrolled ? "146px" : "305px",
+                    height: shouldBeScrolled ? "114px" : "305px",
                     duration: 0.6,
                     ease: "power3.out"
                 });
 
                 // Header-int height
                 gsap.to(headerInt, {
-                    height: shouldBeScrolled ? "130px" : "304px",
+                    height: shouldBeScrolled ? "114px" : "304px",
                     duration: 0.6,
                     ease: "power3.out"
                 });
@@ -72,15 +72,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Column-header height/padding
                 gsap.to(columnHeader, {
-                    height: shouldBeScrolled ? "130px" : "305px",
+                    height: shouldBeScrolled ? "114px" : "305px",
                     duration: 0.6,
                     ease: "power3.out"
                 });
 
                 // Column-header-logo height/padding
                 gsap.to(columnHeaderLogo, {
-                    height: shouldBeScrolled ? "130px" : "305px",
-                    paddingTop: shouldBeScrolled ? "16px" : "16px", // adjust if needed
+                    height: shouldBeScrolled ? "114px" : "305px",
                     duration: 0.6,
                     ease: "power3.out"
                 });

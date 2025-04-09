@@ -1,0 +1,30 @@
+---
+title: A Lab Coat for the Internet
+tags:
+  - Web
+  - UIUX
+  - Frontend
+  - Case study
+highlight: Primary
+preview: A method for generating an audio signal associated with a virtual sound
+  source is disclosed.
+image-preview: null
+video-preview: /img/wri.mp4
+image-hero: /img/wri-hero.jpg
+what: A complete redesign and rebuild of The Works Research Institute’s website
+  — transforming a static one-pager into a modern, flexible platform for
+  publishing scientific work.
+how: Fully custom-coded frontend paired with Decap CMS and Eleventy, giving the
+  client full control over content without sacrificing design integrity or
+  performance.
+challenges: Designing a site with no typical conversion goals meant focusing
+  entirely on structure, clarity, and usability—while ensuring seamless content
+  management and flexibility.
+---
+**Author:** Paul Oomen.
+
+**Abstract:** A method for generating an audio signal associated with a virtual sound source is disclosed. The method comprises obtaining an input audio signal *x(t)* and modifying the input audio signal *x(t)* to obtain a modified audio signal. The latter step comprises performing a signal delay operation. Optionally, modifying the input audio signal comprises a signal inverting operation and/or a signal amplification or attenuation and/or a signal feedback operation. The method further comprises generating the audio signal *y(t)* based on a combination, e.g. a summation, of the input audio signal *x(t)* and the modified audio signal.
+
+**Covered by:**
+
+International publication number: WO2021/118352 A1
