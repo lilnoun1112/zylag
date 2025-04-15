@@ -2,11 +2,11 @@
 title: Zylag Portfolio
 layout: 'base.njk'
 ---
-
+<main data-barba="container" data-barba-namespace="home">
 <div class="nav">
-    <a class="nav-item works" href="#works"><span class="nav-span">w</span>orks</a>
-    <a class="nav-item about" href="#about"><span class="nav-span">a</span>bout</a>
-    <a class="nav-item kontakt" href="#kontakt"><span class="nav-span" style="margin-right: 4px;">k</span>ontakt</a>
+  <a class="nav-item works" href="#works">works</a>
+  <a class="nav-item about" href="#about">about</a>
+  <a class="nav-item kontakt" href="#kontakt">contact</a>
 </div>
 <div class="top-blur"></div>
 <div class="content">
@@ -17,22 +17,22 @@ layout: 'base.njk'
         <div class="column-header">
             <div class="header-int">
                 <div class="header-text">
-                    <h1 class="header-text-int" style="width: 700px; top:65px">Hi I'm zylag</h1>
-                    <p class="header-text-int" style="bottom:65px">Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet .</p>
+                    <h1 class="header-text-int hi" >Hi I'm zylag</h1>
+                    <p class="header-text-int desc">Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet .</p>
                 </div>
-                    <div class="header-buttons">
-                        <div class="header-buttons-wrap">
-                          <div class="button-secondary" data-tag="Web"><span class="button-label">Web</span></div>
-                          <div class="button-secondary" data-tag="UIUX"><span class="button-label">UIUX</span></div>
-                          <div class="button-secondary" data-tag="Merch"><span class="button-label">Merch</span></div>
-                          <div class="button-secondary" data-tag="Logo"><span class="button-label">Logo</span></div>
-                          <div class="button-secondary" data-tag="Web3"><span class="button-label">Web3</span></div>
-                          <div class="button-secondary" data-tag="Branding"><span class="button-label">Branding</span></div>
-                          <div class="button-secondary" data-tag="Frontend"><span class="button-label">Frontend</span></div>
-                          <div class="button-secondary" data-tag="Fonts"><span class="button-label">Fonts</span></div>
-                          <div class="button-secondary" data-tag="Case study"><span class="button-label">Case study</span></div>
-                        </div>
+                <div class="header-buttons">
+                    <div class="header-buttons-wrap">
+                      <div class="button-secondary" data-tag="Web"><span class="button-label">Web</span></div>
+                      <div class="button-secondary" data-tag="UIUX"><span class="button-label">UIUX</span></div>
+                      <div class="button-secondary" data-tag="Merch"><span class="button-label">Merch</span></div>
+                      <div class="button-secondary" data-tag="Logo"><span class="button-label">Logo</span></div>
+                      <div class="button-secondary" data-tag="Web3"><span class="button-label">Web3</span></div>
+                      <div class="button-secondary" data-tag="Branding"><span class="button-label">Branding</span></div>
+                      <div class="button-secondary" data-tag="Frontend"><span class="button-label">Frontend</span></div>
+                      <div class="button-secondary" data-tag="Fonts"><span class="button-label">Fonts</span></div>
+                      <div class="button-secondary" data-tag="Case study"><span class="button-label">Case study</span></div>
                     </div>
+                </div>
             </div>
             <div class="line-header"></div>
         </div>
@@ -49,10 +49,8 @@ layout: 'base.njk'
         
               {# === If video-preview is provided === #}
               {% if post.data["video-preview"] %}
-                <video class="highlight-video" muted playsinline preload="auto">
-                  <source src="/static{{ post.data["video-preview"] }}" type="video/mp4" />
-                </video>
-                <canvas class="highlight-canvas"></canvas>
+
+                <canvas class="highlight-canvas" data-sprite="/static{{ post.data["video-preview"] }}"></canvas>
         
               {# === Else if image-preview is provided === #}
               {% elif post.data["image-preview"] %}
@@ -92,15 +90,12 @@ layout: 'base.njk'
       {% if post %}
         <a href="{{ post.url }}" class="article-card">
           {% if post.data["video-preview"] %}
-            <video class="highlight-video" muted playsinline preload="auto">
-              <source src="/static{{ post.data["video-preview"] }}" type="video/mp4" />
-            </video>
-            <canvas class="article-canvas"></canvas>
+            <canvas class="article-canvas" data-sprite="/static{{ post.data["video-preview"] }}"></canvas>
           {% elif post.data["image-preview"] %}
-            <img class="highlight-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
+            <img class="article-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
           {% endif %}
 
-          <h3>{{ post.data.title }}</h3>
+          <h3 style="text-align: center;">{{ post.data.title }}</h3>
           <div class="label-box">
             {% if post.data.tags %}
               {% for tag in post.data.tags %}
@@ -132,25 +127,20 @@ layout: 'base.njk'
       </div>
       <div class="about-card">
         <div class="textbox about">
-          <h2>Tamás Szilágyi</h2>
-          <div class="label-box">
-            <div class="button-secondary" data-target="background"><span class="button-label">Background</span></div>
-            <div class="button-secondary" data-target="philosophy"><span class="button-label">Design philosophy</span></div>
+          <h2 style="margin-bottom: 32px;">Tamás Szilágyi</h2>
+          <div class="summary-box">
+            <h4 class="summary">Background</h4>
+            <p class="fine">Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet urna.</p>
           </div>
-          <p id="background">
-            Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet urna.
-            <br>
-            Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet urna.
-          </p>
-          <p id="philosophy">
-            Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet urna.
-            <br>
-            Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet urna.
-          </p>
+          <div class="summary-box">
+            <h4 class="summary">Design philosophy</h4>
+            <p class="fine">Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet urna.</p>
+          </div>
         </div>
-        <img class="about-image" src="images/me.jpg">
+        <div class="about-image-container">
+        </div>
       </div>
-      <div class="spacer">
+      <div class="spacer-big">
         <div class="line-top" style="top: -1px;"></div>
         <div class="line-bottom" style="bottom: -1px;"></div>
       </div>
@@ -198,7 +188,7 @@ layout: 'base.njk'
       </div>
       <div class="contact-card">
         <div class="contact-inner">
-          <h2 style="display: flex; flex: 1 0 0;">contact me</h2>
+          <h2 style="display: flex; flex: 1 0 0;">contact</h2>
           <div class="label-box contact" >
             <div class="button-primary"><span class="button-label">Get CV</span></div>
             <div class="button-secondary"><span class="button-label">Email</span></div>
@@ -223,19 +213,14 @@ layout: 'base.njk'
     </div>
   </div>
 </div>
+</main>
 
 
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
-<script src="../js/header-scroll.js"></script>
-<script src="../js/header-scroll-gsap.js"></script>
-<script src="../js/scroll-drag.js"></script>
-<script src="../js/hover-play.js"></script>
-<script src="../js/nav-activate.js"></script>
-<script src="../js/filter.js"></script>
-<script src="../js/tabs.js"></script>
+
 
 
 

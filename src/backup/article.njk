@@ -1,0 +1,109 @@
+---
+layout: 'base.njk'
+---
+
+<div class="nav scrolled articlepage">
+    <a class="nav-item works" href="/#works"><span class="nav-span">w</span>orks</a>
+    <a class="nav-item about" href="/#about"><span class="nav-span">a</span>bout</a>
+    <a class="nav-item kontakt" href="#kontakt"><span class="nav-span" style="margin-right: 4px;">k</span>ontakt</a>
+</div>
+<div class="top-blur scrolled"></div>
+<div class="content articlepage">
+    <div class="header articlepage scrolled ">
+        <div class="column-header-logo scrolled">
+            <a href="/" class="logo scrolled"><img style="width: 48px;" src="/images/logo.svg"></a>
+        </div>
+        <div class="column-header scrolled">
+
+            <div class="line-header articlepage"></div>
+        </div>
+    </div>
+</div>
+
+<div class="section articlepage">
+    <div class="column-logo"></div>
+    <div class="column-main articlepage">
+
+      <div class="articlepage-card">
+        <img class="articlepage-image" src="url('/static/{{ image-hero }}')" alt="Hero image for {{ title }}">
+        <div class="textbox">
+          <h2>{{ title }}</h2>
+          <div class="label-box">
+            {% if tags %}
+              {% for tag in tags %}
+                <div class="label-pill">{{ tag }}</div>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <p class="fine">{{ minutes }} minute read</p>
+          <div class="summary-box first">
+            <h3 class="summary">The What</h3>
+            <p class="fine">{{ what }}</p>
+          </div>
+          <div class="summary-box">
+            <h3 class="summary">The How</h3>
+            <p class="fine">{{ how }}</p>
+          </div>
+          <div class="summary-box last">
+            <h3 class="summary">The Challenge</h3>
+            <p class="fine">{{ challenges }}</p>
+          </div>
+        <div class="article-content">
+          {{ content | safe }}
+        </div>
+        
+
+        </div>
+      </div>
+
+
+    <section id="kontakt">
+      <div class="spacer-big" >
+        <div class="line-top" style="top: -1px;"></div>
+        <div class="line-bottom" style="bottom: -1px;"></div>
+      </div>
+      <div class="contact-card ">
+        <div class="contact-inner">
+          <h2 style="display: flex; flex: 1 0 0;">contact me</h2>
+          <div class="label-box contact" >
+            <div class="button-primary"><span class="button-label">Get CV</span></div>
+            <div class="button-secondary"><span class="button-label">Email</span></div>
+            <div class="button-secondary icon"><img class="button-label" src="/images/linkedin.svg" alt=""></div>
+            <div class="button-secondary icon"><img class="button-label" src="/images/telegram.svg" alt=""></div>
+            <div class="button-secondary icon"><img class="button-label" src="/images/discord.svg" alt=""></div>
+          </div>
+        </div>
+        <footer>
+          <p>© 2025 Tamás Szilágyi. All rights reserved.</p>
+          <p>No cookies. No tracking. <a href="">Read more</a></p>
+          <p>Built with 11ty and Decap CMS</p>
+        </footer>
+      </div>
+    </section>
+
+
+
+
+    <div class="spacer-big" >
+      <div class="line-top" style="top: -1px;"></div>
+      <div class="line-bottom" style="bottom: -1px;"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+<script src="../js/scroll-drag.js"></script>
+<script src="../js/hover-play.js"></script>
+<script src="../js/nav-activate.js"></script>
+<script src="../js/filter.js"></script>
+<script src="../js/tabs.js"></script>
+
+
+
+    

@@ -1,107 +1,76 @@
-console.log("Header scroll with full animation loaded!");
+export function initHeaderScrollGSAP() {
+  const buttons = document.querySelectorAll('.button-secondary');
+  const buttonContainer = document.querySelector('.header-buttons-wrap');
+  const headerButtons = document.querySelector('.header-buttons');
 
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOMContentLoaded fired!");
+  if (!buttons.length || !buttonContainer || !headerButtons) return;
 
-    // Buttons and their container
-    const buttons = document.querySelectorAll('.button-secondary');
-    const buttonContainer = document.querySelector('.header-buttons-wrap');
-    const headerButtons = document.querySelector('.header-buttons');
+  let isScrolled = false;
 
-    // Other header elements
+  function getResponsiveHeight(scrolled) {
+    const isNarrow = window.innerWidth <= 1180;
+
+    // Adjust base heights based on scroll state
+    if (scrolled) {
+      return "114px"; // Same for all widths
+    } else {
+      return isNarrow ? "355px" : "305px";
+    }
+  }
+
+  function trackAndAnimate() {
+    const shouldBeScrolled = window.scrollY > 0;
+
+    // Always re-query DOM to ensure fresh elements after Barba transition
     const header = document.querySelector('.header');
     const headerInt = document.querySelector('.header-int');
     const columnHeader = document.querySelector('.column-header');
     const columnHeaderLogo = document.querySelector('.column-header-logo');
     const logo = document.querySelector('.logo');
 
-    let isScrolled = false;
+    if (!header || !headerInt || !columnHeader || !columnHeaderLogo || !logo) return;
 
-    function trackAndAnimate() {
-        const shouldBeScrolled = window.scrollY > 0;
+    if (shouldBeScrolled !== isScrolled) {
+      const oldPositions = Array.from(buttons).map(btn => btn.getBoundingClientRect());
 
-        if (shouldBeScrolled !== isScrolled) {
-            console.log(`Scroll state is changing: ${shouldBeScrolled ? 'Adding' : 'Removing'} .scrolled`);
+      buttonContainer.classList.toggle('scrolled', shouldBeScrolled);
+      headerButtons.classList.toggle('scrolled', shouldBeScrolled);
 
+      requestAnimationFrame(() => {
+        const newPositions = Array.from(buttons).map(btn => btn.getBoundingClientRect());
 
-            // ✅ 1. Capture old positions of buttons
-            const oldPositions = Array.from(buttons).map(btn => btn.getBoundingClientRect());
+        buttons.forEach((btn, i) => {
+          const dx = oldPositions[i].left - newPositions[i].left;
+          const dy = oldPositions[i].top - newPositions[i].top;
 
-            // ✅ 2. Toggle .scrolled class to trigger layout shift
-            buttonContainer.classList.toggle('scrolled', shouldBeScrolled);
-            headerButtons.classList.toggle('scrolled', shouldBeScrolled);
+          gsap.set(btn, { x: dx, y: dy });
+          gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "power3.out" });
+        });
 
-            // ✅ 3. Wait for layout to recalculate
-            requestAnimationFrame(() => {
-                // ✅ 4. Capture new positions
-                const newPositions = Array.from(buttons).map(btn => btn.getBoundingClientRect());
+        gsap.to([header, headerInt, columnHeader, columnHeaderLogo], {
+          height: getResponsiveHeight(shouldBeScrolled),
+          duration: 0.6,
+          ease: "power3.out"
+        });
 
-                // ✅ 5. Calculate deltas and animate buttons
-                buttons.forEach((btn, i) => {
-                    const dx = oldPositions[i].left - newPositions[i].left;
-                    const dy = oldPositions[i].top - newPositions[i].top;
+        gsap.to(logo, {
+          opacity: shouldBeScrolled ? 1 : 0,
+          duration: 0.4,
+          ease: "power3.out"
+        });
 
-                    // Set back to old place visually
-                    gsap.set(btn, { x: dx, y: dy });
-
-                    // Animate to new place
-                    gsap.to(btn, {
-                        x: 0,
-                        y: 0,
-                        duration: 0.6,
-                        ease: "power3.out"
-                    });
-                });
-
-                // ✅ 6. Animate other elements smoothly
-
-                // Header height change
-                gsap.to(header, {
-                    height: shouldBeScrolled ? "114px" : "305px",
-                    duration: 0.6,
-                    ease: "power3.out"
-                });
-
-                // Header-int height
-                gsap.to(headerInt, {
-                    height: shouldBeScrolled ? "114px" : "304px",
-                    duration: 0.6,
-                    ease: "power3.out"
-                });
-
-
-                // Column-header height/padding
-                gsap.to(columnHeader, {
-                    height: shouldBeScrolled ? "114px" : "305px",
-                    duration: 0.6,
-                    ease: "power3.out"
-                });
-
-                // Column-header-logo height/padding
-                gsap.to(columnHeaderLogo, {
-                    height: shouldBeScrolled ? "114px" : "305px",
-                    duration: 0.6,
-                    ease: "power3.out"
-                });
-
-                // Logo opacity
-                gsap.to(logo, {
-                    opacity: shouldBeScrolled ? 1 : 0,
-                    duration: 0.4,
-                    ease: "power3.out"
-                });
-
-
-
-                // ✅ 7. Update internal state
-                isScrolled = shouldBeScrolled;
-            });
-        }
+        isScrolled = shouldBeScrolled;
+      });
     }
+  }
 
-    // Initial check on page load
-    trackAndAnimate();
+  // Initial run and scroll listener setup
+  trackAndAnimate();
 
-    // Scroll listener
-    window.addEventListener("scroll", trackAndAnimate);
-});
+  window.removeEventListener("scroll", window.__headerScrollGSAPHandler);
+  window.__headerScrollGSAPHandler = trackAndAnimate;
+  window.addEventListener("scroll", window.__headerScrollGSAPHandler);
+}
+
+
+  
