@@ -1188,6 +1188,8 @@ footer{
     .content{
         padding-right: 8px;
         width: calc(100% - 8px);
+        transform: translateZ(0);
+        will-change: transform;
     }
 
     .section{
