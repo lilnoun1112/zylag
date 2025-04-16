@@ -1190,6 +1190,8 @@ footer{
         width: calc(100% - 8px);
         transform: translateZ(0);
         will-change: transform;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
     }
 
     .section{
