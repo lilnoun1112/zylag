@@ -1228,5 +1228,8 @@ footer{
         justify-content: left;
     }
 
+    .column-logo{
+        display: none;
+    }
 }
 
