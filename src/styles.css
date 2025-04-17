@@ -1145,7 +1145,8 @@ footer{
     }
 
     .summary-box{
-        max-width: 2000px;
+        max-width: 640px;
+
     }
 
     .header-text-int{
@@ -1181,12 +1182,20 @@ footer{
         justify-content: center;
     }
 
+    .header-buttons{
+        padding: 0px 16px 16px 32px;
+    }
+
+    .logo{
+        margin-top: 32px;
+    }
+
     .nav{
         display: none;
     }
 
     .content{
-        padding-right: 8px;
+        padding-right: 0px;
         width: calc(100% - 8px);
         transform: translateZ(0);
         will-change: transform;
@@ -1195,8 +1204,8 @@ footer{
     }
 
     .section{
-        padding-right: 8px;
-        width: calc(100% - 8px);
+        padding-right: 0px;
+        width: 100%;
     }
 
     .summary-box{
@@ -1205,18 +1214,25 @@ footer{
 
     .hi{
         top: auto;
+        min-width: 754px;
     }
 
     .desc{
         bottom: auto;
         max-width: 80%;
+        min-width: 754px;
     }
 
     .article-box{
         flex-direction: column;
     }
 
+    .article-highlight{
+        padding: 8px;
+    }
+
     .article-card{
+        padding: 8px;
         width: calc(100% - 16px);
     }
 
@@ -1230,6 +1246,27 @@ footer{
 
     .column-logo{
         display: none;
+    }
+
+    .column-main{
+        padding-top: 329px;
+    }
+
+    h2{
+        font-size: 32px !important;
+    }
+
+    .label-box{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .textbox.highlight{
+        gap: 16px;
+    }
+
+    .line-header{
+        bottom: 1px;
     }
 }
 
