@@ -8,15 +8,19 @@ export function initHeaderScrollGSAP() {
   let isScrolled = false;
 
   function getResponsiveHeight(scrolled) {
-    const isNarrow = window.innerWidth <= 1180;
-
-    // Adjust base heights based on scroll state
+    const width = window.innerWidth;
+    const isMobile = width <= 780;
+    const isTablet = width <= 1180;
+  
     if (scrolled) {
-      return "114px"; // Same for all widths
+      return isTablet ? "80px" : "114px"; // Tablet and mobile share this
     } else {
-      return isNarrow ? "355px" : "305px";
+      if (isMobile) return "455px";
+      if (isTablet) return "355px";
+      return "305px";
     }
   }
+  
 
   function trackAndAnimate() {
     const shouldBeScrolled = window.scrollY > 0;

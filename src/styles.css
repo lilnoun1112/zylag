@@ -35,7 +35,7 @@ body {
     justify-content: flex-start;
     background: radial-gradient(45.61% 65.51% at 0% 0%, rgba(219, 183, 65, 0.20) 0%, rgba(219, 183, 65, 0.00) 100%), 
                 radial-gradient(28.73% 50.71% at 94.79% 89.31%, rgba(219, 183, 65, 0.20) 0%, rgba(219, 183, 65, 0.00) 100%), 
-                #28242D;
+                var(--body);
 }
 
 main{
@@ -1238,9 +1238,10 @@ footer{
 
     .contact-inner{
         flex-direction: column;
+        gap: 32px;
     }
 
-    .label-box.conact{
+    .label-box.contact{
         justify-content: left;
     }
 
@@ -1267,6 +1268,39 @@ footer{
 
     .line-header{
         bottom: 1px;
+    }
+
+    .spacer-big{
+        height: 120px;
+    }
+
+    footer{
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media only screen and (max-width:780px){
+    body{
+        background: linear-gradient(179deg, rgba(219, 183, 65, 0.20) 0%, rgba(219, 183, 65, 0.00) 20%, rgba(219, 183, 65, 0.00) 80%, rgba(219, 183, 65, 0.20) 100%), 
+        var(--body);
+    }
+
+    .hi{
+        top: auto;
+        min-width: 1px;
+    }
+
+    .desc{
+        min-width: 1px;
+    }
+
+    h1{
+        font-size: 40px !important;
+    }
+
+    .column-main{
+        padding-top: 459px;
     }
 }
 
