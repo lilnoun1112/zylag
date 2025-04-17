@@ -1212,5 +1212,21 @@ footer{
         max-width: 80%;
     }
 
+    .article-box{
+        flex-direction: column;
+    }
+
+    .article-card{
+        width: calc(100% - 16px);
+    }
+
+    .contact-inner{
+        flex-direction: column;
+    }
+
+    .label-box.conact{
+        justify-content: left;
+    }
+
 }
 
