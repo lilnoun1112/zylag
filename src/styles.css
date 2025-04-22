@@ -1318,7 +1318,7 @@ footer{
     body{
         background: linear-gradient(179deg, rgba(219, 183, 65, 0.20) 0%, rgba(219, 183, 65, 0.00) 20%, rgba(219, 183, 65, 0.00) 80%, rgba(219, 183, 65, 0.20) 100%), 
         var(--body);
-
+        
     }
 
     .header {
@@ -1343,7 +1343,7 @@ footer{
     }
 
     h1{
-        font-size: 40px !important;
+        font-size: 37px !important;
     }
 
     .column-main{
@@ -1403,6 +1403,9 @@ footer{
         padding: 14px 22px;
     }
 
+    .testimonial-wrapper{
+        width: 100%;
+    }
     
 }
 
