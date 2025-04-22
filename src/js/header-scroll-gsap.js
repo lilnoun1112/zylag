@@ -11,7 +11,7 @@ export function initHeaderScrollGSAP() {
     const width = window.innerWidth;
     const isMobile = width <= 780;
     const isTablet = width <= 1180;
-  
+
     if (scrolled) {
       return isTablet ? "80px" : "114px"; // Tablet and mobile share this
     } else {
@@ -20,12 +20,10 @@ export function initHeaderScrollGSAP() {
       return "305px";
     }
   }
-  
 
   function trackAndAnimate() {
     const shouldBeScrolled = window.scrollY > 0;
 
-    // Always re-query DOM to ensure fresh elements after Barba transition
     const header = document.querySelector('.header');
     const headerInt = document.querySelector('.header-int');
     const columnHeader = document.querySelector('.column-header');
@@ -48,12 +46,12 @@ export function initHeaderScrollGSAP() {
           const dy = oldPositions[i].top - newPositions[i].top;
 
           gsap.set(btn, { x: dx, y: dy });
-          gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "power3.out" });
+          gsap.to(btn, { x: 0, y: 0, duration: 0.8, ease: "power3.out" });
         });
 
         gsap.to([header, headerInt, columnHeader, columnHeaderLogo], {
           height: getResponsiveHeight(shouldBeScrolled),
-          duration: 0.6,
+          duration: 0.8,
           ease: "power3.out"
         });
 
@@ -68,13 +66,12 @@ export function initHeaderScrollGSAP() {
     }
   }
 
-  // Initial run and scroll listener setup
-  trackAndAnimate();
-
+  // Attach the scroll handler
   window.removeEventListener("scroll", window.__headerScrollGSAPHandler);
   window.__headerScrollGSAPHandler = trackAndAnimate;
   window.addEventListener("scroll", window.__headerScrollGSAPHandler);
 }
+
 
 
   

@@ -38,9 +38,16 @@ barba.init({
       namespace: 'home',
       afterEnter() {
         console.log('🏠 Home loaded');
-        
+
         initHeaderScrollGSAP();
         initHeaderScroll();
+
+        // Delay scroll logic until layout has stabilized
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            window.__headerScrollGSAPHandler?.();
+          }, 100); // Adjust if needed
+        });
       }
     },
     {
@@ -92,7 +99,6 @@ barba.init({
       },
 
       async enter({ next }) {
-
         window.scrollTo(0, 0);
 
         const columnMain = next.container.querySelector('.column-main');
@@ -155,9 +161,8 @@ barba.init({
       },
 
       async enter({ next }) {
-
         window.scrollTo(0, 0);
-        
+
         const columnMain = next.container.querySelector('.column-main');
         const fadingElements = [...columnMain.children];
         const topBlur = document.querySelector('.top-blur');
@@ -182,9 +187,6 @@ barba.init({
 
 // Reset scroll to top after every page transition
 barba.hooks.afterEnter(() => {
-
-
-  // If a nav item triggered a smooth anchor scroll
   const target = sessionStorage.getItem('scroll-smooth-on-load');
   if (target) {
     const anchor = target.split('#')[1];
@@ -203,13 +205,11 @@ barba.hooks.afterEnter(() => {
   }
 });
 
-
 document.querySelectorAll('.nav a.nav-item').forEach(link => {
   link.addEventListener('click', (e) => {
     const href = link.getAttribute('href');
 
     if (href && href.startsWith('#')) {
-      // Local anchor scroll (e.g. #kontakt)
       e.preventDefault();
       document.documentElement.style.scrollBehavior = 'smooth';
 
@@ -221,8 +221,6 @@ document.querySelectorAll('.nav a.nav-item').forEach(link => {
     }
 
     if (href && href.startsWith('/#')) {
-      // Internal page + anchor (e.g. /#about, /#works)
-      // Let Barba handle it, but flag smooth scrolling for next load
       sessionStorage.setItem('scroll-smooth-on-load', href);
     }
   });

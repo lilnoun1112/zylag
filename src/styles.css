@@ -466,9 +466,6 @@ p{
     gap: 8px;
     flex-shrink: 0;
     align-self: stretch;
-
-
-
 }
 
 .header-text.scrolled {
@@ -1190,11 +1187,13 @@ footer{
     .header-text-int{
         width: 100%;
         position: relative;
+        max-height: 700px;
+        transition: all 0.15s ease-out;
         
     }
 
     .header-text-int.scrolled{
-        height: 0px;
+        max-height: 0px;
     }
 
     .header-text{
@@ -1202,11 +1201,14 @@ footer{
         flex: 0 0 0;
         align-items:flex-start;
         height: fit-content;
+        max-height: 1000px;
+        transition: all 0.3s ease-out;
     }
 
     .header-text.scrolled{
-        height: 0px;
+        max-height: 0px;
         max-width: calc(100% - 32px);
+        transition: all 0.3s ease-out;
     }
 
     .header-buttons{
@@ -1325,12 +1327,21 @@ footer{
         height: 600px;
     }
 
+    .header.scrolled {
+        height: 80px;
+        transition: all 0.3s ease-out;
+    }
+
     .column-header{
         height: 600px;
     }
 
     .column-header-logo{
         height: 600px;
+    }
+
+    .column-header-logo.scrolled{
+        height: 80px;
     }
 
     .hi{
@@ -1358,11 +1369,6 @@ footer{
         height: 80px;
     }
 
-    .header-text{
-        flex: 0 0 0;
-        align-items:flex-start;
-        height: fit-content;
-    }
 
     .header-text-int{
         margin: 0px;
@@ -1401,6 +1407,10 @@ footer{
 
     .button-secondary{
         padding: 14px 22px;
+    }
+
+    .button-secondary.icon{
+        padding: 8px 10px;
     }
 
     .testimonial-wrapper{

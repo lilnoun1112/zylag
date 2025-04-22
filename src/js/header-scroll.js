@@ -1,5 +1,5 @@
 export function initHeaderScroll() {
-    const elements = document.querySelectorAll(".header-text, .header-text-int, .column-header, .top-blur, .nav");
+    const elements = document.querySelectorAll(".header-text, .header-text-int, .top-blur, .nav");
   
     function toggleScrolledClass() {
       if (window.scrollY > 0) {
