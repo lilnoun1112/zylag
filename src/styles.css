@@ -316,6 +316,7 @@ p{
 
 .content {
     position: fixed;
+    top: env(safe-area-inset-top, 0px);
     width: calc(100% - 180px);
     padding-right: 180px;
     max-width: 1440px;
@@ -351,7 +352,7 @@ p{
 
 .top-blur{
     position: fixed;
-    top: 0;
+    top: env(safe-area-inset-top, 0px);
     width: 150vw;
     height: 0px;
     z-index: 18;
