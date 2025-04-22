@@ -1406,6 +1406,10 @@ footer{
     .testimonial-wrapper{
         width: 100%;
     }
+
+    .testimonial-card{
+        width: 320px;
+    }
     
 }
 
