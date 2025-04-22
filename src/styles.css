@@ -456,7 +456,6 @@ p{
 .header-text {
     height: 100%;
     margin: 0px;
-
     position: relative;
     display: flex;
     flex: 1 0 0;
@@ -1170,24 +1169,42 @@ footer{
 @media only screen and (max-width:1180px){
     .header-int{
         flex-direction: column;
+        justify-content: center;
+        gap: 32px;
     }
 
     .header-text-int{
         width: 100%;
         position: relative;
+        
+    }
+
+    .header-text-int.scrolled{
+        height: 0px;
     }
 
     .header-text{
-        
         justify-content: center;
+        flex: 0 0 0;
+        align-items:flex-start;
+        height: fit-content;
+    }
+
+    .header-text.scrolled{
+        height: 0px;
+        max-width: calc(100% - 32px);
     }
 
     .header-buttons{
-        padding: 0px 16px 16px 32px;
+        padding: 0px 16px 0px 32px;
+    }
+
+    .header-buttons-wrap{
+        height: fit-content;
     }
 
     .logo{
-        margin-top: 32px;
+        margin-top: 16px;
     }
 
     .nav{
@@ -1214,13 +1231,13 @@ footer{
 
     .hi{
         top: auto;
-        min-width: 754px;
+        min-width: calc(100% - 32px);
     }
 
     .desc{
         bottom: auto;
         max-width: 80%;
-        min-width: 754px;
+        min-width: calc(100% - 32px);
     }
 
     .article-box{
@@ -1278,12 +1295,16 @@ footer{
         flex-direction: column;
         gap: 16px;
     }
+
+
+    
 }
 
 @media only screen and (max-width:780px){
     body{
         background: linear-gradient(179deg, rgba(219, 183, 65, 0.20) 0%, rgba(219, 183, 65, 0.00) 20%, rgba(219, 183, 65, 0.00) 80%, rgba(219, 183, 65, 0.20) 100%), 
         var(--body);
+
     }
 
     .hi{
@@ -1300,7 +1321,61 @@ footer{
     }
 
     .column-main{
-        padding-top: 459px;
+        padding-top: 620px;
     }
+
+    .column-header.scrolled {
+        height: 80px;
+    }
+
+    .top-blur.scrolled{
+        height: 80px;
+    }
+
+    .header-text{
+        flex: 0 0 0;
+        align-items:flex-start;
+        height: fit-content;
+    }
+
+    .header-text-int{
+        margin: 0px;
+        width: calc(100% - 32px);
+    }
+
+    .header-int{
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .hi{
+        min-width: calc(100% - 32px);
+    }
+
+    .desc{
+        max-width: 100%;
+        min-width: calc(100% - 32px);
+    }
+
+    .header-buttons{
+        height: fit-content;
+        min-width: 1px;
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .header-buttons.scrolled{
+        padding: 8px 8px 8px 16px;
+    }
+
+    .line-header{
+        bottom: 0px;
+    }
+
+    .button-secondary{
+        padding: 14px 22px;
+    }
+
+    
 }
 

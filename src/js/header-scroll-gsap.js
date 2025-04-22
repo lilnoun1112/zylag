@@ -15,7 +15,7 @@ export function initHeaderScrollGSAP() {
     if (scrolled) {
       return isTablet ? "80px" : "114px"; // Tablet and mobile share this
     } else {
-      if (isMobile) return "455px";
+      if (isMobile) return "600px";
       if (isTablet) return "355px";
       return "305px";
     }
