@@ -203,6 +203,8 @@ barba.hooks.afterEnter(() => {
 
     sessionStorage.removeItem('scroll-smooth-on-load');
   }
+
+  
 });
 
 document.querySelectorAll('.nav a.nav-item').forEach(link => {

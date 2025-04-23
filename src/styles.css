@@ -26,7 +26,6 @@ html {
 body {
     position: relative;
     width: 100%;
-    min-height: 120vh;
     background-color: var(--body);
     margin: 0; 
     display: flex; 
@@ -41,7 +40,6 @@ body {
 main{
     position: relative;
     width: 100%;
-    min-height: 120vh;
     margin: 0; 
     display: flex; 
     flex-direction: column;
@@ -316,7 +314,7 @@ p{
 
 .content {
     position: fixed;
-    top: env(safe-area-inset-top, 0px);
+    top: env(safe-area-inset-top, -16px);
     width: calc(100% - 180px);
     padding-right: 180px;
     max-width: 1440px;
@@ -1181,7 +1179,7 @@ footer{
     .header-int{
         flex-direction: column;
         justify-content: center;
-        gap: 32px;
+        gap: 12px;
         height: 355px;
     }
 
@@ -1213,8 +1211,16 @@ footer{
     }
 
     .header-buttons{
-        padding: 0px 16px 0px 32px;
+        height: fit-content;
+        min-width: 1px;
+        max-width: 100%;
+        padding: 8px;
     }
+
+    .header-buttons.scrolled{
+        padding: 8px 8px 8px 16px;
+    }
+
 
     .header-buttons-wrap{
         height: fit-content;
@@ -1229,11 +1235,14 @@ footer{
         height: fit-content;
         z-index: 20;
         top: auto;
-        bottom: 0px;
+        bottom: env(safe-area-inset-bottom, 0px);
         left: 0px;
+        transform: translateZ(0);
+        will-change: transform, top, bottom;
+        backface-visibility: hidden;
         display: flex;
-        width: calc(100vw - 48px);
-        padding: 16px 24px;
+        width: 90vw;
+        padding: 24px 5vw 32px 5vw;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -1282,10 +1291,19 @@ footer{
     .content{
         padding-right: 0px;
         width: calc(100% - 8px);
+        top: env(safe-area-inset-top, 0px);
         transform: translateZ(0);
         will-change: transform;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
+    }
+
+    .top-blur{
+        top: env(safe-area-inset-top, 0px);
+    }
+
+    .top-blur.scrolled{
+        height: 80px;
     }
 
     .section{
