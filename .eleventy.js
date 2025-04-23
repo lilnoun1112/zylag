@@ -33,10 +33,29 @@ module.exports = function(eleventyConfig) {
       .slice(0, 3); // Get only the 3 most recent posts
   });
 
-    return {
-        dir: {
-          input: "src",
-          output: "public"
+  eleventyConfig.addTransform("fix-img-paths-and-figcaption", function(content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html")) {
+      // 1. Prefix /img/ with /static/img/
+      content = content.replace(/src="\/img\//g, 'src="/static/img/');
+
+      // 2. Wrap <img> with title in <figure><img><figcaption></figcaption></figure>
+      content = content.replace(
+        /<img([^>]*?)title="(.*?)"([^>]*?)>/g,
+        (match, beforeTitle, titleText, afterTitle) => {
+          return `<figure><img${beforeTitle}${afterTitle}><figcaption>${titleText}</figcaption></figure>`;
         }
-      };
+      );
+
+      return content;
+    }
+    return content;
+  });
+
+
+  return {
+    dir: {
+      input: "src",
+      output: "public"
+    }
+  };
 }

@@ -1074,6 +1074,28 @@ footer{
     max-width: 688px;
 }
 
+.article-content img{
+    width: 100%;
+    border-radius: 16px;
+}
+
+.article-content figcaption{
+    color: #F0F5F4;
+    font-family: Lora;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    flex: 1 0 0;
+    font-size: 14px;
+    line-height: 20px; 
+    text-align: left;
+}
+
+.article-content figure{
+    margin: 0;
+}
+
 .hi{
     width: 700px; 
     top:65px;
