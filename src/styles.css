@@ -34,6 +34,7 @@ body {
     flex-direction: column;
     align-items: center; 
     justify-content: flex-start;
+    scrollbar-width: none;
     background: radial-gradient(45.61% 65.51% at 0% 0%, rgba(219, 183, 65, 0.20) 0%, rgba(219, 183, 65, 0.00) 100%), 
                 radial-gradient(28.73% 50.71% at 94.79% 89.31%, rgba(219, 183, 65, 0.20) 0%, rgba(219, 183, 65, 0.00) 100%), 
                 var(--body);
@@ -77,7 +78,7 @@ h2{
     font-style: normal;
     color: var(--foreground);
     font-size: 48px;
-    line-height: 100%; 
+    line-height: 130%; 
     letter-spacing: -3px;
     text-transform: uppercase;
     margin: 0;
@@ -1017,11 +1018,11 @@ footer{
 }
 
 .articlepage-image{
-    width: 100%;
+    width: calc(100% - 64px);
     aspect-ratio: 16 / 9;
     align-self: stretch;
     object-fit: cover;
-    border-radius: 16px;
+    margin: 32px;
     
 }
 
@@ -1513,6 +1514,12 @@ footer{
 
     .testimonial-card{
         width: 320px;
+    }
+
+    .articlepage-image{
+        width: 100%;
+        margin: 0px;
+        
     }
     
 }
