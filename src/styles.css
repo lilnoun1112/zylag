@@ -118,6 +118,16 @@ p{
     margin: 0;
 }
 
+ul{
+    color: #F0F5F4;
+    font-family: Lora;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; 
+    margin: 0;
+}
+
 .highlight-overlay {
     position: absolute;
     inset: 0;
@@ -524,6 +534,7 @@ p{
     cursor: pointer;
     display: flex;
     padding: 16px 24px;
+    max-height: 48px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -621,6 +632,7 @@ p{
     background-color: #DBB741;
     display: flex;
     padding: 16px 24px;
+    max-height: 48px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -676,7 +688,8 @@ p{
 .article-highlight{
     display: flex;
     position: relative;
-    height: 450px;
+    min-height: 450px;
+    height: fit-content;
     margin: -1px;
     padding: 16px;
     align-items: flex-start;
@@ -708,6 +721,14 @@ p{
     text-decoration: none;
 }
 
+.card-title{
+    text-align: center;
+}
+
+.card-preview{
+    text-align: center;
+}
+
 .article-box{
     display: flex;
     height: fit-content;
@@ -727,8 +748,9 @@ p{
 
 .highlight-canvas {
     width: calc(66% - 32px);
+    aspect-ratio: 16 / 9;
     align-self: stretch;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 16px;
 }
 

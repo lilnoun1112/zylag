@@ -95,7 +95,7 @@ layout: 'base.njk'
             <img class="article-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
           {% endif %}
 
-          <h3 style="text-align: center;">{{ post.data.title }}</h3>
+          <h3 class="card-title">{{ post.data.title }}</h3>
           <div class="label-box">
             {% if post.data.tags %}
               {% for tag in post.data.tags %}
@@ -103,7 +103,7 @@ layout: 'base.njk'
               {% endfor %}
             {% endif %}
           </div>
-          <p style="text-align: center;">{{ post.data.preview }}</p>
+          <p class="card-preview">{{ post.data.preview }}</p>
           <div class="button-primary"><span class="button-label">Read</span></div>
         </a>
       {% endif %}
@@ -221,6 +221,7 @@ layout: 'base.njk'
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+<script src="../js/boxheight.js"></script>
 
 
 

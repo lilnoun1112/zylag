@@ -1,7 +1,7 @@
 // Function to adjust height of all .teas-txt-inner and .teas2-txt-inner elements to match the tallest one within their respective rows
 function adjustTextBoxHeights() {
-    adjustInnerBoxHeights('.teas-txt-inner');
-    adjustInnerBoxHeights('.teas2-txt-inner');
+    adjustInnerBoxHeights('.card-title');
+    adjustInnerBoxHeights('.card-preview');
 }
 
 // Function to adjust height of all elements with a specific class to match the tallest one within their respective rows
