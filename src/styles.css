@@ -1205,8 +1205,10 @@ footer{
     opacity: 0.6;
 }
 
+
+
 .article-content figure{
-    margin: 0;
+    margin: -50px 0px;
 }
 
 .hi{
