@@ -5,8 +5,7 @@ tags:
   - Logo
   - Branding
   - Case study
-highlight:
-  - Branding
+highlight: UIUX
 preview: Built a welcoming visual identity and website that balances warmth,
   professionalism, and inclusivity for psychologist Lilla Saáry.
 video-preview: /img/saary-spritesheet.png

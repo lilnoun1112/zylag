@@ -4,8 +4,7 @@ tags:
   - Web
   - Branding
   - Logo
-highlight:
-  - Web
+highlight: Web
 preview: Given a stack of wireframes and a big idea, I built a full design
   system and polished platform design for Hungary’s newest creative-project
   matchmaking site.
