@@ -5,6 +5,8 @@ import { initScrollDrag } from './scroll-drag.js';
 import { initTabs } from './tabs.js';
 import { initFilter } from './filter.js';
 import { initHoverAnim } from './hoveranim.js';
+import { destroyHeaderScrollGSAP } from './header-scroll-gsap.js';
+import { destroyHeaderScroll } from './header-scroll.js';
 
 console.log('✅ scripts.js loaded');
 
@@ -66,6 +68,10 @@ barba.init({
       async leave({ current }) {
         const done = this.async();
         const el = (sel) => document.querySelector(sel);
+
+        destroyHeaderScrollGSAP();
+        destroyHeaderScroll();
+
         const columnMain = current.container.querySelector('.column-main');
         const fadingElements = [...columnMain.children];
         const topBlur = el('.top-blur');
@@ -162,6 +168,9 @@ barba.init({
 
       async enter({ next }) {
         window.scrollTo(0, 0);
+
+        initHeaderScrollGSAP();
+        initHeaderScroll();
 
         const columnMain = next.container.querySelector('.column-main');
         const fadingElements = [...columnMain.children];

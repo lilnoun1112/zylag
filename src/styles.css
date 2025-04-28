@@ -2,7 +2,7 @@
     --foreground: #F0F5F4;
     --background: rgba(34, 31, 38, 0.00);
     --body: #28242D;
-    --line: #5F5B61;
+    --line: #515151;
   }
 
 @font-face {
@@ -82,6 +82,12 @@ h2{
     letter-spacing: -3px;
     text-transform: uppercase;
     margin: 0;
+}
+
+.name{
+    width: 100%;
+    max-width: 688px;
+    margin-bottom: 32px;
 }
 
 h3{
@@ -317,10 +323,26 @@ ul{
     z-index: 8;
 }
 
+.spacer-card{
+    position: relative;
+    width: 100%;
+    height: 32px;
+    overflow: visible;
+    z-index: 8;
+}
+
 .spacer-big{
     position: relative;
     width: 100%;
     height: 240px;
+    overflow: visible;
+    z-index: 8;
+}
+
+.spacer-mid{
+    position: relative;
+    width: 100%;
+    height: 120px;
     overflow: visible;
     z-index: 8;
 }
@@ -421,6 +443,7 @@ ul{
     position: relative;
     z-index: 9;
     padding-top: 369px;
+    padding-bottom: 32px;
 }
 
 .column-main.static {
@@ -521,6 +544,47 @@ ul{
 }
 
 .header-buttons-wrap.scrolled {
+    justify-content: flex-start;
+    min-width: 1294px;
+
+
+}
+
+.header-contacts {
+    display: flex;
+    height: 224px;
+    flex-basis: 30%;
+    min-width: 360px;
+    max-width: 100%;
+    padding: 40px 16px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: visible;
+    overflow-y: visible;
+    scrollbar-width: none;
+
+}
+
+.header-contacts.scrolled {
+    flex-basis: 100%;
+    overflow-x: scroll;
+
+}
+
+.header-contacts-wrap {
+    position: relative;
+    display: flex;
+    height: 100%;
+    min-width: 1px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    align-self: stretch;
+    flex-wrap: wrap;
+
+}
+
+.header-contacts-wrap.scrolled {
     justify-content: flex-start;
     min-width: 1294px;
 
@@ -686,10 +750,9 @@ ul{
 }
 
 .article-highlight{
-    display: flex;
+    display: none;
     position: relative;
-    min-height: 450px;
-    height: fit-content;
+    height: 500px;
     margin: -1px;
     padding: 16px;
     align-items: flex-start;
@@ -702,6 +765,11 @@ ul{
     z-index: 10;
     text-decoration: none;
 }
+
+.article-highlight[data-highlight="Frontend"] {
+    display: flex;
+  }
+
 
 .article-card{
     display: flex;
@@ -732,6 +800,7 @@ ul{
 
 .article-box{
     display: flex;
+    flex-wrap: wrap;
     height: fit-content;
     position: relative;
     align-items: flex-start;
@@ -804,11 +873,29 @@ ul{
 
 .textbox.highlight{
     width: 34%;
+    gap: 24px;
 }
 
 
 
 .label-pill{
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 78px;
+    border: 1px solid var(--foreground);
+    color: #F0F5F4;
+    font-family: Lora;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+}
+
+.highlight-pill{
     display: flex;
     padding: 4px 12px;
     justify-content: center;
@@ -895,7 +982,7 @@ ul{
     margin: -1px;
     padding: 40px;
     align-items: flex-start;
-    gap: 64px;
+    gap: 240px;
     flex: 1 0 0;
     border-radius: 32px;
     border: 1px solid var(--background);
@@ -997,6 +1084,7 @@ footer{
 .testimonial-track {
     display: flex;
     margin: 0px -1px;
+    padding-bottom: 32px;
     gap: 0px;
     z-index: 10;
     will-change: transform;
@@ -1114,6 +1202,7 @@ footer{
     font-size: 14px;
     line-height: 20px; 
     text-align: left;
+    opacity: 0.6;
 }
 
 .article-content figure{
@@ -1143,6 +1232,10 @@ footer{
     }
 
     .header-buttons-wrap{
+        margin-left: 24px;
+    }
+
+    .header-contacts-wrap{
         margin-left: 24px;
     }
 
@@ -1190,6 +1283,10 @@ footer{
     .summary-box{
         max-width: 640px;
 
+    }
+
+    .name{
+        max-width: 640px;
     }
 
     .header-text-int{
@@ -1271,6 +1368,22 @@ footer{
 
 
     .header-buttons-wrap{
+        height: fit-content;
+    }
+
+    .header-contacts{
+        height: fit-content;
+        min-width: 1px;
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .header-contacts.scrolled{
+        padding: 8px 8px 8px 16px;
+    }
+
+
+    .header-contacts-wrap{
         height: fit-content;
     }
 
@@ -1430,6 +1543,19 @@ footer{
         gap: 16px;
     }
 
+    .contact-card{
+        gap: 80px;
+        padding: 16px 16px 160px 16px;
+    }
+
+    a{
+        padding: 0px;
+    }
+
+    .textbox.about{
+        padding: 0px
+    }
+
 
     
 }
@@ -1519,6 +1645,17 @@ footer{
         padding: 8px 8px 8px 16px;
     }
 
+    .header-contacts{
+        height: fit-content;
+        min-width: 1px;
+        max-width: 100%;
+        padding: 8px;
+    }
+
+    .header-contacts.scrolled{
+        padding: 8px 8px 8px 16px;
+    }
+
     .line-header{
         bottom: 0px;
     }
@@ -1526,6 +1663,11 @@ footer{
     .button-secondary{
         padding: 14px 22px;
     }
+
+    .button-primary{
+        padding: 14px 22px;
+    }
+
 
     .button-secondary.icon{
         padding: 8px 10px;
@@ -1543,6 +1685,10 @@ footer{
         width: 100%;
         margin: 0px;
         
+    }
+
+    .summary-box{
+        width: calc(100% - 32px);
     }
     
 }

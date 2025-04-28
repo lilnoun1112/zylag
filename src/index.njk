@@ -40,78 +40,61 @@ layout: 'base.njk'
 </div>
 
 <section class="section" id="works">
-    <div class="column-logo"></div>
-    <div class="column-main">
-        {% set count = 0 %}
-        {%- for post in collections.portfolio | reverse -%}
-          {% if count < 1 %}
-            <a href="{{ post.url }}" class="article-highlight">
-        
-              {# === If video-preview is provided === #}
-              {% if post.data["video-preview"] %}
-
-                <canvas class="highlight-canvas" data-sprite="/static{{ post.data["video-preview"] }}"></canvas>
-        
-              {# === Else if image-preview is provided === #}
-              {% elif post.data["image-preview"] %}
-                <img class="highlight-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
-        
-              {% endif %}
-        
-              <div class="textbox highlight">
-                <h2>{{ post.data.title }}</h2>
-                <div class="label-box">
-                    {% if post.data.tags %}
-                        {% for tag in post.data.tags %}
-                        <div class="label-pill">{{ tag }}</div>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-                <p>{{ post.data.preview }}</p>
-                <div class="button-primary"><span class="button-label">Read</span></div>
-              </div>
-        
-            </a>
-            {% set count = count + 1 %}
-          {% endif %}
-        {%- endfor -%}
-        
-        
-       {% set posts = collections.portfolio | reverse %}
-{% for i in range(0, posts.length, 2) %}
-  <div class="spacer">
-    <div class="line-top" style="top: -1px;"></div>
-    <div class="line-bottom" style="bottom: -1px;"></div>
-  </div>
-
-  <div class="article-box">
-    {% for j in [0, 1] %}
-      {% set post = posts[i + j] %}
-      {% if post %}
-        <a href="{{ post.url }}" class="article-card">
-          {% if post.data["video-preview"] %}
-            <canvas class="article-canvas" data-sprite="/static{{ post.data["video-preview"] }}"></canvas>
-          {% elif post.data["image-preview"] %}
-            <img class="article-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
-          {% endif %}
-
-          <h3 class="card-title">{{ post.data.title }}</h3>
+  <div class="column-logo"></div>
+  <div class="column-main">
+    {% set posts = collections.portfolio | reverse %}
+    {% for post in posts %}
+      <a href="{{ post.url }}" class="article-highlight" data-highlight="{{ post.data.highlight }}">
+        {# === If video-preview is provided === #}
+        {% if post.data["video-preview"] %}
+          <canvas class="highlight-canvas" data-sprite="/static{{ post.data["video-preview"] }}"></canvas>
+        {% elif post.data["image-preview"] %}
+          <img class="highlight-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
+        {% endif %}
+        <div class="textbox highlight">
+          <h2>{{ post.data.title }}</h2>
           <div class="label-box">
             {% if post.data.tags %}
               {% for tag in post.data.tags %}
-                <div class="label-pill">{{ tag }}</div>
+                <div class="highlight-pill">{{ tag }}</div>
               {% endfor %}
             {% endif %}
           </div>
-          <p class="card-preview">{{ post.data.preview }}</p>
+          <p>{{ post.data.preview }}</p>
           <div class="button-primary"><span class="button-label">Read</span></div>
-        </a>
-      {% endif %}
+        </div>
+      </a>
     {% endfor %}
-  </div>
+        
+        
 
 
-{% endfor %}
+
+<div class="article-box">
+  {% for post in posts %}
+    <a href="{{ post.url }}" class="article-card" data-highlight="{{ post.data.highlight }}">
+
+      {% if post.data["video-preview"] %}
+        <canvas class="article-canvas" data-sprite="/static{{ post.data["video-preview"] }}"></canvas>
+      {% elif post.data["image-preview"] %}
+        <img class="article-image" src="/static{{ post.data["image-preview"] }}" alt="Preview for {{ post.data.title }}">
+      {% endif %}
+
+      <h3 class="card-title">{{ post.data.title }}</h3>
+      <div class="label-box">
+        {% if post.data.tags %}
+          {% for tag in post.data.tags %}
+            <div class="label-pill">{{ tag }}</div>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <p class="card-preview">{{ post.data.preview }}</p>
+      <div class="button-primary"><span class="button-label">Read</span></div>
+    </a>
+  {% endfor %}
+</div>
+
+
 
 
     </div>
@@ -127,7 +110,7 @@ layout: 'base.njk'
       </div>
       <div class="about-card">
         <div class="textbox about">
-          <h2 style="margin-bottom: 32px;">Tamás Szilágyi</h2>
+          <h2 class="name">Tamás Szilágyi</h2>
           <div class="summary-box">
             <h4 class="summary">Background</h4>
             <p class="fine">Lorem ipsum dolor sit amet consectetur. Fames commodo erat commodo rhoncus enim. Tincidunt magna tellus nunc pulvinar mauris semper. Auctor leo auctor id ullamcorper placerat cursus. Aliquet dictum neque quisque euismod consectetur amet urna.</p>
@@ -140,7 +123,7 @@ layout: 'base.njk'
         <div class="about-image-container">
         </div>
       </div>
-      <div class="spacer">
+      <div class="spacer-mid" >
 
       </div>
       <div class="testimonial-wrapper">
@@ -207,9 +190,8 @@ layout: 'base.njk'
 
 
 
-    <div class="spacer-big" >
-      <div class="line-top" style="top: -1px;"></div>
-      <div class="line-bottom" style="bottom: -1px;"></div>
+
+
     </div>
   </div>
 </div>
@@ -220,7 +202,7 @@ layout: 'base.njk'
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
-<script src="../js/boxheight.js"></script>
+
 
 
 

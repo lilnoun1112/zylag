@@ -72,6 +72,11 @@ export function initHeaderScrollGSAP() {
   window.addEventListener("scroll", window.__headerScrollGSAPHandler);
 }
 
+export function destroyHeaderScrollGSAP() {
+  window.removeEventListener('scroll', window.__headerScrollGSAPHandler);
+}
+
+
 
 
   

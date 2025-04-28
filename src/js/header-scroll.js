@@ -12,4 +12,9 @@ export function initHeaderScroll() {
     toggleScrolledClass();
     window.addEventListener("scroll", toggleScrolledClass);
   }
+
+  export function destroyHeaderScroll() {
+    window.removeEventListener('scroll', window.__headerScrollHandler);
+  }
+  
   
