@@ -5,10 +5,10 @@ tags:
 highlight: Logo
 preview: Collection of logos and marks from 2021 to present day.
 video-preview: /img/logo-spritesheet.png
-image_hero: /img/logo-hero.png
-what: placeholder
-how: placeholder
-challenges: placeholder
+image_hero: ""
+what: ""
+how: ""
+challenges: ""
 minutes: 2
 ---
 ![bottyan logo](/img/logo-bottyan.png "bottyan — Cybersecurity")
