@@ -18,12 +18,12 @@ layout: 'base.njk'
             <div style="height: 0px;"></div>
             <div class="header-contacts scrolled">
               <div class="header-contacts-wrap scrolled">
-                <div class="button-primary"><span class="button-label">Get CV</span></div>
-                <div class="button-secondary"><span class="button-label">Email</span></div>
-                <div class="button-secondary"><span class="button-label">Call</span></div>
-                <div class="button-secondary icon"><img class="button-label" src="/images/linkedin.svg" alt=""></div>
-                <div class="button-secondary icon"><img class="button-label" src="/images/telegram.svg" alt=""></div>
-                <div class="button-secondary icon"><img class="button-label" src="/images/discord.svg" alt=""></div>
+                <a class="button-primary" href="https://zylag.netlify.app/images/tamas_szilagyi_design_CV_2025.pdf"><span class="button-label">Get CV</span></a>
+                <a class="button-secondary" href="mailto:hello@zylag.site"><span class="button-label">Email</span></a>
+                <a class="button-secondary" href="tel:+36305470779"><span class="button-label">Call</span></a>
+                <a class="button-secondary icon" style="display: none;"><img class="button-label" src="/images/linkedin.svg" alt=""></a>
+                <a class="button-secondary icon" href="https://t.me/zylageth"><img class="button-label" src="/images/telegram.svg" alt=""></a>
+                <a class="button-secondary icon" style="display: none;"><img class="button-label" src="/images/discord.svg" alt=""></a>
               </div>
             </div>
         </div>
@@ -37,7 +37,9 @@ layout: 'base.njk'
     <div class="column-main articlepage">
 
       <div class="articlepage-card">
+        {% if image_hero %}
         <img class="articlepage-image" src="/static/{{ image_hero }}" alt="Hero image for {{ title }}">
+        {% endif %}
         <div class="textbox">
           <h2>{{ title }}</h2>
           <div class="label-box">
@@ -48,18 +50,24 @@ layout: 'base.njk'
             {% endif %}
           </div>
           <p class="fine">{{ minutes }} minute read</p>
+          {% if what %}
           <div class="summary-box first">
             <h3 class="summary">The What</h3>
             <p class="fine">{{ what }}</p>
           </div>
+          {% endif %}
+          {% if how %}
           <div class="summary-box">
             <h3 class="summary">The How</h3>
             <p class="fine">{{ how }}</p>
           </div>
+          {% endif %}
+          {% if challenges %}
           <div class="summary-box last">
             <h3 class="summary">The Challenge</h3>
             <p class="fine">{{ challenges }}</p>
           </div>
+          {% endif %}
         <div class="article-content">
           {{ content | safe }}
         </div>
@@ -101,12 +109,12 @@ layout: 'base.njk'
         <div class="contact-inner" style="flex-direction: column;">
           <h2 style="display: flex; flex: 1 0 0;">contact</h2>
           <div class="label-box contact" style="justify-content: left;">
-            <div class="button-primary"><span class="button-label">Get CV</span></div>
-            <div class="button-secondary"><span class="button-label">Email</span></div>
-            <div class="button-secondary"><span class="button-label">Call</span></div>
-            <div class="button-secondary icon"><img class="button-label" src="/images/linkedin.svg" alt=""></div>
-            <div class="button-secondary icon"><img class="button-label" src="/images/telegram.svg" alt=""></div>
-            <div class="button-secondary icon"><img class="button-label" src="/images/discord.svg" alt=""></div>
+            <a class="button-primary" href="https://zylag.netlify.app/images/tamas_szilagyi_design_CV_2025.pdf"><span class="button-label">Get CV</span></a>
+            <a class="button-secondary" href="mailto:hello@zylag.site"><span class="button-label">Email</span></a>
+            <a class="button-secondary" href="tel:+36305470779"><span class="button-label">Call</span></a>
+            <a class="button-secondary icon" style="display: none;"><img class="button-label" src="/images/linkedin.svg" alt=""></a>
+            <a class="button-secondary icon" href="https://t.me/zylageth"><img class="button-label" src="/images/telegram.svg" alt=""></a>
+            <a class="button-secondary icon" style="display: none;"><img class="button-label" src="/images/discord.svg" alt=""></a>
           </div>
         </div>
         <footer>

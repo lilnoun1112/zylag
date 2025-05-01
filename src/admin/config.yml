@@ -21,10 +21,10 @@ collections:
       - { name: "preview", label: "Preview", widget: "string" }
       - { name: "image-preview", label: "Preview Image", widget: "image", required: false}
       - { name: "video-preview", label: "Preview Video", widget: "file", required: false}
-      - { name: "image_hero", label: "Hero Image", widget: "image" }
-      - { name: "what", label: "The What", widget: "string" }
-      - { name: "how", label: "The How", widget: "string" }
-      - { name: "challenges", label: "Challenges", widget: "string" }
+      - { name: "image_hero", label: "Hero Image", widget: "image", required: false }
+      - { name: "what", label: "The What", widget: "string", required: false }
+      - { name: "how", label: "The How", widget: "string", required: false }
+      - { name: "challenges", label: "Challenges", widget: "string", required: false }
       - { name: "minutes", label: "Minutes to read", widget: "number", value_type: "int" }
       - { name: "body", label: "Body", widget: "markdown", required: false}
 
