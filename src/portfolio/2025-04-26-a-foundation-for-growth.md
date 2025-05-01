@@ -4,8 +4,7 @@ tags:
   - Web
   - Logo
   - Branding
-highlight:
-
+highlight: Branding
 preview: Viktor’s private practice needed a calm, professional online presence.
   I designed a clean one-pager, crafted a friendly brand, and brought it all
   online with Framer.
