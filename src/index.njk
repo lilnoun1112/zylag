@@ -42,6 +42,7 @@ layout: 'base.njk'
 <section class="section" id="works">
   <div class="column-logo"></div>
   <div class="column-main">
+    <div class="highlight-wrapper">
     {% set posts = collections.portfolio | reverse %}
     {% for post in posts %}
       <a href="{{ post.url }}" class="article-highlight" data-highlight="{{ post.data.highlight }}">
@@ -65,6 +66,7 @@ layout: 'base.njk'
         </div>
       </a>
     {% endfor %}
+  </div>
         
         
 

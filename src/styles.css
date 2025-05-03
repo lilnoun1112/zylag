@@ -206,7 +206,7 @@ ul{
     display: flex;
     width: 179px;
     height: 80vh;
-    padding: 8vh 0px;
+    padding: 6vh 0px;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -232,7 +232,7 @@ ul{
     color: var(--foreground);
     font-family: "eurostile-extended", sans-serif;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 900;
     line-height: 100%; 
@@ -378,6 +378,7 @@ ul{
     border-right: 1px solid var(--line);
     border-left: 1px solid var(--line);
     position: relative;
+    will-change: transform;
 }
 
 .column-header.scrolled {
@@ -465,6 +466,7 @@ ul{
     position: relative;
     height: 304px; /* Initial max-height */
     overflow: hidden;
+    will-change: transform;
 }
 
 .header-int.scrolled {
@@ -522,6 +524,7 @@ ul{
     overflow-x: visible;
     overflow-y: visible;
     scrollbar-width: none;
+    will-change: transform;
 
 }
 
@@ -541,7 +544,7 @@ ul{
     gap: 8px;
     align-self: stretch;
     flex-wrap: wrap;
-
+    will-change: transform;
 }
 
 .header-buttons-wrap.scrolled {
@@ -617,6 +620,7 @@ ul{
     overflow: hidden;
     background: none;
     transition: outline 0.3s ease-out, box-shadow 0.3s ease-out;
+    will-change: transform;
 }
 
 .icon{
@@ -765,6 +769,12 @@ ul{
     box-shadow: 0px 0px 8px 4px rgba(44, 40, 49, 0);
     z-index: 10;
     text-decoration: none;
+}
+
+.highlight-wrapper{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
 }
 
 .article-highlight[data-highlight="Frontend"] {
