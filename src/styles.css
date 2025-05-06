@@ -1601,17 +1601,16 @@ footer{
         height: 80px;
     }
 
-    .hi{
-        top: auto;
-        min-width: 1px;
-    }
-
     .desc{
         min-width: 1px;
     }
 
     h1{
         font-size: 37px !important;
+    }
+
+    h2{
+        font-size: 24px !important;
     }
 
     .column-main{
@@ -1640,6 +1639,8 @@ footer{
 
     .hi{
         min-width: calc(100% - 32px);
+        top: auto;
+        min-width: 1px;
     }
 
     .desc{
