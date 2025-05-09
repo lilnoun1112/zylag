@@ -39,11 +39,11 @@ We mapped the funnel from curiosity to commitment: cinematic and gameplay traile
 
 This is where being gamers ourselves helped. We understood the appeal—not in broad marketing-speak, but in emotional terms. The heavy gothic aesthetic, the weight of choice, the satisfaction of tactical planning. The entire site leaned into that: visual direction pulled from game art, UI elements with texture and atmosphere, tone that mirrored the game’s world.
 
-![Community section of the site.](/img/desktop - 3.jpg "We got KA:KT a heavily community focused campaign going.")
+![Community section](/img/desktop - 3.jpg "Community building was a main focus during the campaign.")
 
 As the campaign evolved, the site grew with it. We introduced a community section to highlight Discord, Reddit, and social touchpoints. The newsletter signup came with an exclusive Mordred skin—placed prominently, of course. Tracking and analytics were layered in from the start, and we tested multiple CTA labels and copy styles to optimize conversion.
 
-![Newsletter section with free skin featured.](/img/desktop - 5.jpg "We wanted the reward skin to have a flaming sword but this is fine too I guess.")
+![Newsletter section](/img/desktop - 5.jpg "We wanted the reward skin to have a flaming sword but I guess this is fine too.")
 
 ### Creative for the Campaign
 
@@ -51,7 +51,7 @@ While I led UX and landing experience, our team covered a wide range of creative
 
 ### Results
 
-King Arthur: Knight’s Tale sold over 110,000 copies in its first week, reaching two out of three sales bonus milestones set by Neocore. The partnership continued through DLC releases (including Legion IX) and console ports.
+King Arthur: Knight’s Tale sold over 110,000 copies in its first week, reaching two out of three sales bonus milestones set by Neocore Games. The partnership continued through DLC releases (including Legion IX) and console ports.
 
 ### Summary
 
