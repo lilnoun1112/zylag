@@ -51,7 +51,7 @@ While I led UX and landing experience, our team covered a wide range of creative
 
 ### Results
 
-King Arthur: Knight’s Tale sold over 110,000 copies in its first week, reaching two out of three sales bonus milestones set by Neocore. The partnership continued through DLC releases (including Legion IX) and console ports.
+King Arthur: Knight’s Tale sold over 110,000 copies in its first week, reaching two out of three sales bonus milestones set by Neocore Games. The partnership continued through DLC releases (including Legion IX) and console ports.
 
 ### Summary
 
