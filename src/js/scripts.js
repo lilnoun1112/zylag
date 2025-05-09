@@ -40,15 +40,13 @@ barba.init({
       namespace: 'home',
       afterEnter() {
         console.log('🏠 Home loaded');
-
         initHeaderScrollGSAP();
         initHeaderScroll();
 
-        // Delay scroll logic until layout has stabilized
         requestAnimationFrame(() => {
           setTimeout(() => {
             window.__headerScrollGSAPHandler?.();
-          }, 100); // Adjust if needed
+          }, 100);
         });
       }
     },
@@ -72,8 +70,8 @@ barba.init({
         destroyHeaderScrollGSAP();
         destroyHeaderScroll();
 
-        const columnMain = current.container.querySelector('.column-main');
-        const fadingElements = [...columnMain.children];
+        const columnMains = current.container.querySelectorAll('.column-main');
+        const fadingElements = Array.from(columnMains).flatMap(col => [...col.children]);
         const topBlur = el('.top-blur');
         const content = el('.content');
         const nav = el('.nav');
@@ -95,6 +93,18 @@ barba.init({
         el('.logo')?.classList.add('scrolled');
         el('.column-header')?.classList.add('scrolled');
         el('.column-header .line-header')?.classList.add('articlepage');
+
+        // ✅ Add articlepage and animate static width
+        columnMains.forEach(el => {
+          el.classList.add('articlepage');
+          if (el.classList.contains('static')) {
+            gsap.to(el, {
+              width: '880px',
+              duration: 0.4,
+              ease: 'power2.out'
+            });
+          }
+        });
 
         const section = el('.section#works');
         section?.classList.add('articlepage');
@@ -134,8 +144,8 @@ barba.init({
       async leave({ current }) {
         const done = this.async();
         const el = (sel) => document.querySelector(sel);
-        const columnMain = current.container.querySelector('.column-main');
-        const fadingElements = [...columnMain.children];
+        const columnMains = current.container.querySelectorAll('.column-main');
+        const fadingElements = Array.from(columnMains).flatMap(col => [...col.children]);
         const topBlur = el('.top-blur');
         const content = el('.content');
         const nav = el('.nav');
@@ -158,6 +168,8 @@ barba.init({
         el('.column-header')?.classList.remove('scrolled');
         el('.column-header .line-header')?.classList.remove('articlepage');
 
+        document.querySelectorAll('.column-main').forEach(el => el.classList.remove('articlepage'));
+
         const section = el('.section.articlepage');
         section?.classList.remove('articlepage');
         section?.setAttribute('id', 'works');
@@ -168,7 +180,6 @@ barba.init({
 
       async enter({ next }) {
         window.scrollTo(0, 0);
-
         initHeaderScrollGSAP();
         initHeaderScroll();
 
@@ -200,40 +211,30 @@ barba.hooks.afterEnter(() => {
   if (target) {
     const anchor = target.split('#')[1];
     const el = document.getElementById(anchor) || document.querySelector(`#${anchor}`);
-
     if (el) {
       document.documentElement.style.scrollBehavior = 'smooth';
       el.scrollIntoView();
-
       setTimeout(() => {
         document.documentElement.style.scrollBehavior = '';
       }, 1000);
     }
-
     sessionStorage.removeItem('scroll-smooth-on-load');
   }
-
-  
 });
 
 document.querySelectorAll('.nav a.nav-item').forEach(link => {
   link.addEventListener('click', (e) => {
     const href = link.getAttribute('href');
-
     if (href && href.startsWith('#')) {
       e.preventDefault();
       document.documentElement.style.scrollBehavior = 'smooth';
-
       document.querySelector(href)?.scrollIntoView();
-
       setTimeout(() => {
         document.documentElement.style.scrollBehavior = '';
       }, 1000);
     }
-
     if (href && href.startsWith('/#')) {
       sessionStorage.setItem('scroll-smooth-on-load', href);
     }
   });
 });
-
