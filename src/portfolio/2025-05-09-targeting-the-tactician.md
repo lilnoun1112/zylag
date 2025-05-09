@@ -17,7 +17,7 @@ how: Collaborated as part of a six-person agency team to manage the game’s
   campaigns.
 challenges: Achieving standout sales for a genre-niche title, despite early
   access fatigue and the crowded RPG market.
-minutes: 2
+minutes: 5
 ---
 ### Background
 
