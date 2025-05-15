@@ -18,6 +18,27 @@ function initSharedScripts() {
   initTabs();
   initFilter();
   initHoverAnim();
+  initSmoothScrollAnchors();
+}
+
+// Smooth scroll logic for nav anchor links
+function initSmoothScrollAnchors() {
+  document.querySelectorAll('.nav a.nav-item').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        document.documentElement.style.scrollBehavior = 'smooth';
+        document.querySelector(href)?.scrollIntoView();
+        setTimeout(() => {
+          document.documentElement.style.scrollBehavior = '';
+        }, 1000);
+      }
+      if (href && href.startsWith('/#')) {
+        sessionStorage.setItem('scroll-smooth-on-load', href);
+      }
+    });
+  });
 }
 
 // Dispatch custom event on first load
@@ -33,6 +54,30 @@ barba.hooks.afterEnter(initSharedScripts);
 barba.hooks.before(() => {
   console.log('🌀 Barba transition started');
 });
+
+const preloadedSprites = new Set();
+
+function waitForEverything(container) {
+  const imagePromises = Array.from(container.querySelectorAll('img')).map(img => {
+    if (img.complete) return Promise.resolve();
+    return new Promise(resolve => {
+      img.onload = img.onerror = resolve;
+    });
+  });
+
+  const canvasPromises = Array.from(container.querySelectorAll('canvas[data-sprite]')).map(canvas => {
+    return new Promise(resolve => {
+      const url = canvas.dataset.sprite;
+      if (!url) return resolve();
+
+      const preload = new Image();
+      preload.src = url;
+      preload.onload = preload.onerror = resolve;
+    });
+  });
+
+  return Promise.all([...imagePromises, ...canvasPromises]);
+}
 
 barba.init({
   views: [
@@ -94,20 +139,10 @@ barba.init({
         el('.column-header')?.classList.add('scrolled');
         el('.column-header .line-header')?.classList.add('articlepage');
 
-        // ✅ Add articlepage and animate static width
-        columnMains.forEach(el => {
-          el.classList.add('articlepage');
-          if (el.classList.contains('static')) {
-            gsap.to(el, {
-              width: '880px',
-              duration: 0.4,
-              ease: 'power2.out'
-            });
-          }
-        });
+        const sections = current.container.querySelectorAll('.section');
+        sections.forEach(section => section.classList.add('articlepage'));
 
         const section = el('.section#works');
-        section?.classList.add('articlepage');
         section?.removeAttribute('id');
 
         await new Promise(resolve => setTimeout(resolve, 500));
@@ -116,6 +151,8 @@ barba.init({
 
       async enter({ next }) {
         window.scrollTo(0, 0);
+        
+        await waitForEverything(next.container);
 
         const columnMain = next.container.querySelector('.column-main');
         const fadingElements = [...columnMain.children];
@@ -180,8 +217,8 @@ barba.init({
 
       async enter({ next }) {
         window.scrollTo(0, 0);
-        initHeaderScrollGSAP();
-        initHeaderScroll();
+
+        await waitForEverything(next.container);
 
         const columnMain = next.container.querySelector('.column-main');
         const fadingElements = [...columnMain.children];
@@ -191,14 +228,20 @@ barba.init({
 
         if (nav) nav.style.transition = 'none';
 
-        gsap.fromTo([...fadingElements, topBlur, content, nav], {
-          opacity: 0
-        }, {
-          opacity: 1,
-          duration: 0.4,
-          onComplete: () => {
-            if (nav) nav.style.transition = '';
-          }
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            gsap.fromTo([...fadingElements, topBlur, content, nav], {
+              opacity: 0
+            }, {
+              opacity: 1,
+              duration: 0.4,
+              onComplete: () => {
+                if (nav) nav.style.transition = '';
+                initHeaderScrollGSAP();
+                initHeaderScroll();
+              }
+            });
+          }, 30);
         });
       }
     }
@@ -220,21 +263,4 @@ barba.hooks.afterEnter(() => {
     }
     sessionStorage.removeItem('scroll-smooth-on-load');
   }
-});
-
-document.querySelectorAll('.nav a.nav-item').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      document.documentElement.style.scrollBehavior = 'smooth';
-      document.querySelector(href)?.scrollIntoView();
-      setTimeout(() => {
-        document.documentElement.style.scrollBehavior = '';
-      }, 1000);
-    }
-    if (href && href.startsWith('/#')) {
-      sessionStorage.setItem('scroll-smooth-on-load', href);
-    }
-  });
 });
