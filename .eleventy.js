@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('./src/js');
   eleventyConfig.addPassthroughCopy('./src/admin');
   eleventyConfig.addPassthroughCopy('./static');
+  eleventyConfig.addPassthroughCopy('./src/ssl-manager.php');
 
   eleventyConfig.addCollection("featured", function(collectionApi) {
     return collectionApi.getAll().filter(function(item) {
