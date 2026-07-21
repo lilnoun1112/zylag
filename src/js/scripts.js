@@ -58,12 +58,20 @@ barba.hooks.before(() => {
 const preloadedSprites = new Set();
 
 function waitForEverything(container) {
-  const imagePromises = Array.from(container.querySelectorAll('img')).map(img => {
-    if (img.complete) return Promise.resolve();
-    return new Promise(resolve => {
-      img.onload = img.onerror = resolve;
+  // Never block a transition longer than this — a safety net so a slow or
+  // never-loading asset can't leave the page stuck mid-transition.
+  const MAX_WAIT = 2000;
+
+  const imagePromises = Array.from(container.querySelectorAll('img'))
+    // Skip lazy-loaded images: they only load once scrolled into view, so
+    // awaiting their `onload` here would hang the transition indefinitely.
+    .filter(img => img.loading !== 'lazy')
+    .map(img => {
+      if (img.complete) return Promise.resolve();
+      return new Promise(resolve => {
+        img.onload = img.onerror = resolve;
+      });
     });
-  });
 
   const canvasPromises = Array.from(container.querySelectorAll('canvas[data-sprite]')).map(canvas => {
     return new Promise(resolve => {
@@ -76,7 +84,9 @@ function waitForEverything(container) {
     });
   });
 
-  return Promise.all([...imagePromises, ...canvasPromises]);
+  const everything = Promise.all([...imagePromises, ...canvasPromises]);
+  const timeout = new Promise(resolve => setTimeout(resolve, MAX_WAIT));
+  return Promise.race([everything, timeout]);
 }
 
 barba.init({
