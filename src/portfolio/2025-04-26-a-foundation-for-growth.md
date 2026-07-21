@@ -8,8 +8,8 @@ highlight: Branding
 preview: Viktor’s private practice needed a calm, professional online presence.
   I designed a clean one-pager, crafted a friendly brand, and brought it all
   online with Framer.
-video-preview: /img/viktor-spritesheet.png
-image_hero: /img/viktor-hero.png
+video-preview: /img/viktor-spritesheet.webp
+image_hero: /img/viktor-hero.webp
 what: A one-pager landing site and visual identity for a friend starting his
   psychology private practice, focused on work-related mental health issues.
 how: Designed in Figma, visuals partly generated with Midjourney, and built in
@@ -35,7 +35,7 @@ The site design was a breeze. With the brand vibe in place and a client who trus
 
 To tie everything together, I used circular shapes from the logo as recurring design elements across the layout.
 
-![Hero section of pszich.online](/img/kép_2025-04-26_151741895.png "Building with the trusted basics.")
+![Hero section of pszich.online](/img/kép_2025-04-26_151741895.webp "Building with the trusted basics.")
 
 ### Building with Framer
 
@@ -47,7 +47,7 @@ But, as always with a new tool, the real work starts when you want to build some
 
 Take the FAQ section. I wanted a classic accordion: open one item, close the others. Seems simple enough, right? In Framer at the time, it meant building a separate component for every possible open/close state and rigging them together. Weirdly tedious and unintuitive.
 
-![Screenshot of rigging the accordion sections.](/img/kép_2025-04-26_152104895.png "Connections from default state to all others. Lucky there were only 9 questions.")
+![Screenshot of rigging the accordion sections.](/img/kép_2025-04-26_152104895.webp "Connections from default state to all others. Lucky there were only 9 questions.")
 
 Then came the contact form.
 

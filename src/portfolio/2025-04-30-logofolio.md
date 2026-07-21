@@ -4,7 +4,7 @@ tags:
   - Logo
 highlight: Logo
 preview: Collection of logos and marks from 2021 to present day.
-video-preview: /img/logo-spritesheet.png
+video-preview: /img/logo-spritesheet.webp
 image_hero: ""
 what: ""
 how: ""

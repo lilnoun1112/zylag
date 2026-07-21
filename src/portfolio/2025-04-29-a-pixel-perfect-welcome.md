@@ -7,8 +7,8 @@ highlight: Web3
 preview: Nouns 101 was designed to help newcomers step into the crypto world
   with ease. I helped craft an onboarding flow that blends education,
   creativity, and web3 culture into one cohesive journey.
-video-preview: /img/n101-spritesheet.png
-image_hero: /img/nouns101-hero.png
+video-preview: /img/n101-spritesheet.webp
+image_hero: /img/nouns101-hero.webp
 what: Nouns 101 is an onboarding flow introducing users to crypto basics, NFTs,
   DAO mechanics, and the nounish space. I was responsible for design and UX.
 how: Working in a freshly-formed, globally distributed team funded by Lil Nouns
@@ -36,7 +36,7 @@ Given our small team and decentralized nature, workstreams ran in parallel rathe
 
 Visually, we leaned into what was already strong: Nouns' pixel art aesthetic. Using a palette pulled directly from Nouns artwork, I created a UI that felt playful, distinctly retro, and stands out even in a web3 space crowded with pixel nostalgia.
 
-![Nouns101 chapter selection screen.](/img/chapters-desktop.jpg "Final design for the chapter selection dashboard.")
+![Nouns101 chapter selection screen.](/img/chapters-desktop.webp "Final design for the chapter selection dashboard.")
 
 The course broke into four chapters, each with 10–13 card-sized pages of content. UX enhancements included:
 

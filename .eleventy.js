@@ -47,6 +47,13 @@ module.exports = function(eleventyConfig) {
         }
       );
 
+      // 3. Lazy-load markdown-body images (they have no class attribute, so
+      //    template images like the article hero/logo are left untouched).
+      content = content.replace(
+        /<img(?![^>]*\bclass=)(?![^>]*\bloading=)([^>]*?)>/g,
+        (match, attrs) => `<img loading="lazy" decoding="async"${attrs}>`
+      );
+
       return content;
     }
     return content;
