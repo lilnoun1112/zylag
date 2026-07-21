@@ -8,8 +8,8 @@ highlight: Web
 preview: Given a stack of wireframes and a big idea, I built a full design
   system and polished platform design for Hungary’s newest creative-project
   matchmaking site.
-video-preview: /img/spritesheet.png
-image_hero: /img/kreatur-hero.png
+video-preview: /img/spritesheet.webp
+image_hero: /img/kreatur-hero.webp
 what: Hi-fidelity design for a new online platform aimed at matching creatives
   with projects, based on an existing wireframe structure.
 how: Freelance collaboration with an in-house development team, focusing on
@@ -30,23 +30,23 @@ Rather than creating a perfect system first and applying it second, I prefer thi
 
 The final result is a playful but modern design, using a complementary purple-orange palette with soft gradients and shadows to create a sense of depth and plasticity. Custom icons and pictograms tied the visual language together.
 
-![Examples of custom icons for this project.](/img/kreatur-icons.jpg "Examples of custom icons for this project.")
+![Examples of custom icons for this project.](/img/kreatur-icons.webp "Examples of custom icons for this project.")
 
 All of it was wrapped in a neatly organized, developer-friendly Figma file, making full use of components, variants, and auto-layout for easy handoff.
 
-![Birds-eye view of the final design system.](/img/kreatur-system.jpg "Birds-eye view of the final design system-")
+![Birds-eye view of the final design system.](/img/kreatur-system.webp "Birds-eye view of the final design system-")
 
 ### Outcome
 
 The project balanced bold looks with smart UX, perfectly fitting its creative-meets-professional theme. I also contributed logo variations, one of which the client selected and launched with.
 
-![Logo concept examples.](/img/kreatur-logos.png "Some of the logo concepts handed in.")
+![Logo concept examples.](/img/kreatur-logos.webp "Some of the logo concepts handed in.")
 
 ### Summary
 
 Building a polished, dev-ready platform design from scratch wasn't completely new. I've designed several systems like this over the years, though many are tucked safely behind NDAs. This project was a perfect blend of creativity, structure, and collaboration.
 
-![Homepage desktop screenshot.](/img/home-desktop.jpg "Final look of the homepage on desktop.")
+![Homepage desktop screenshot.](/img/home-desktop.webp "Final look of the homepage on desktop.")
 
 ### What I Learned
 

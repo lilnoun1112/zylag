@@ -25,20 +25,22 @@
 <link rel="icon" href="/images/favicon-dark.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
 
 <title>{{ title }}</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" type="text/css" href="/normalize.css">
 <link rel="stylesheet" type="text/css" href="/styles.css">
 <link rel="stylesheet" href="https://use.typekit.net/alq7grm.css">
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
 
-
-<!-- Netlify requirement -->
-<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
 </head>
 <body data-barba="wrapper">
     {{ content | safe }}
 
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script type="module" src="/js/scripts.js" defer></script>
+    <script defer src="https://unpkg.com/@barba/core"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script type="module" src="/js/scripts.js"></script>
+
+    <!-- Netlify Identity: needed only to handle invite/confirmation redirects; deferred so it doesn't block render -->
+    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>

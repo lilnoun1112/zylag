@@ -38,7 +38,7 @@ layout: 'base.njk'
 
       <div class="articlepage-card">
         {% if image_hero %}
-        <img class="articlepage-image" src="/static/{{ image_hero }}" alt="Hero image for {{ title }}">
+        <img class="articlepage-image" decoding="async" fetchpriority="high" src="/static/{{ image_hero }}" alt="Hero image for {{ title }}">
         {% endif %}
         <div class="textbox">
           <h2>{{ title }}</h2>
@@ -137,8 +137,8 @@ layout: 'base.njk'
 
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
-<script src="../js/nav-activate.js"></script>
+<!-- Flip was never used; nav-activate.js is an ES module already loaded via scripts.js
+     (loading it here as a classic script threw a syntax error). Both removed. -->
 
 
 

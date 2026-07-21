@@ -8,8 +8,8 @@ highlight: Case study
 preview: Through UX-focused landing page improvements, immersive visuals, and
   targeted community-building, we helped a niche title find its audience—and
   break sales expectations.
-video-preview: /img/kakt-spritesheet.png
-image_hero: /img/kakt-hero.png
+video-preview: /img/kakt-spritesheet.webp
+image_hero: /img/kakt-hero.webp
 what: "Landing page UX optimization and marketing creatives for King Arthur:
   Knight’s Tale, a tactical RPG from Hungarian developer Neocore Games."
 how: Collaborated as part of a six-person agency team to manage the game’s
@@ -33,17 +33,17 @@ My first focus was the landing page. It needed to do more than explain—it need
 
 We mapped the funnel from curiosity to commitment: cinematic and gameplay trailers to spark interest, followed by a summary of the world, its tone, and the core ideas behind the game. From there, a deeper dive into mechanics helped prospective players imagine what it would feel like to actually *play* as Mordred. If they were into dark, mythology-infused tactical RPGs, this would resonate.
 
-![Over-fold view of KAKT microsite.](/img/untitledvideo-madewithclipchamp2-ezgif.com-optimize.gif "Setting the mood with some gameplay footage.")
+![Over-fold view of KAKT microsite.](/img/untitledvideo-madewithclipchamp2-ezgif.com-optimize.webp "Setting the mood with some gameplay footage.")
 
 ### Speaking Their Language
 
 This is where being gamers ourselves helped. We understood the appeal—not in broad marketing-speak, but in emotional terms. The heavy gothic aesthetic, the weight of choice, the satisfaction of tactical planning. The entire site leaned into that: visual direction pulled from game art, UI elements with texture and atmosphere, tone that mirrored the game’s world.
 
-![Community section](/img/desktop3.jpg "Community building was a main focus during the campaign.")
+![Community section](/img/desktop3.webp "Community building was a main focus during the campaign.")
 
 As the campaign evolved, the site grew with it. We introduced a community section to highlight Discord, Reddit, and social touchpoints. The newsletter signup came with an exclusive Mordred skin—placed prominently, of course. Tracking and analytics were layered in from the start, and we tested multiple CTA labels and copy styles to optimize conversion.
 
-![Newsletter section](/img/desktop5.jpg "We wanted the reward skin to have a flaming sword but I guess this is fine too.")
+![Newsletter section](/img/desktop5.webp "We wanted the reward skin to have a flaming sword but I guess this is fine too.")
 
 ### Creative for the Campaign
 

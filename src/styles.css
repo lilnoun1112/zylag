@@ -7,14 +7,18 @@
 
 @font-face {
     font-family: "ZylagDisplay";
-    src: url("../fonts/ZylagDisplay-Regular.ttf") format("truetype");
+    src: url("../fonts/ZylagDisplay-Regular.woff2") format("woff2"),
+         url("../fonts/ZylagDisplay-Regular.ttf") format("truetype");
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "ZylagDisplay";
-    src: url("../fonts/ZylagDisplay-Outline.ttf") format("truetype");
+    src: url("../fonts/ZylagDisplay-Outline.woff2") format("woff2"),
+         url("../fonts/ZylagDisplay-Outline.ttf") format("truetype");
     font-weight: 700;
+    font-display: swap;
 }
 
 html {
@@ -968,7 +972,7 @@ ul{
     display: flex;
     object-fit: cover;
     border-radius: 16px;
-    background-image: url(images/me.jpg);
+    background-image: url(images/me.webp);
     background-position: center;
     background-repeat: no-repeat;
   }

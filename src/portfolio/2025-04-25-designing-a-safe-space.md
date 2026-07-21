@@ -9,8 +9,8 @@ tags:
 highlight: UIUX
 preview: Built a welcoming visual identity and website that balances warmth,
   professionalism, and inclusivity for psychologist Lilla Saáry.
-video-preview: /img/saary-spritesheet.png
-image_hero: /img/sl-hero.png
+video-preview: /img/saary-spritesheet.webp
+image_hero: /img/sl-hero.webp
 what: Creating the first visual identity and website for sexual psychologist
   Lilla Saáry (saarylilla.hu), designed to welcome, support, and guide visitors
   through emotionally complex subject matter.
@@ -48,7 +48,7 @@ The two primaries are intentionally never used together, switching roles dependi
 
 To support the brand further, we developed a set of pictograms. Instead of the typical minimalist icons we went for something larger, decorative, but still legible. Stylistically, they take cues from the boldness of old-school tattoo design. Each icon lives inside a vertical oval, subtly referencing doorways or portals—metaphors for entering a new, safer headspace.
 
-![Pictograms designed for site navigation.](/img/ikonok.jpg "Ornamental pictograms designed for clear and stylish site navigation.")
+![Pictograms designed for site navigation.](/img/ikonok.webp "Ornamental pictograms designed for clear and stylish site navigation.")
 
 These motifs extend throughout the site, which was conceived as a kind of interior. Each page is a room. Each icon a doorway.
 
@@ -60,7 +60,7 @@ Together with Lilla, we developed a set of personas: diverse in gender, age, per
 
 Their most important moment comes at the end of the user journey, where they cluster together around a lock symbol on the contact page. Here, they quietly reinforce one final message: you’re safe here.
 
-![Full cast of characters.](/img/lakat.jpg "The full cast of characters—and potential clients.")
+![Full cast of characters.](/img/lakat.webp "The full cast of characters—and potential clients.")
 
 ### UX as Emotional Journey
 
@@ -74,7 +74,7 @@ Beyond the standard menu, the pictogram portals appear across all pages, letting
 
 FAQs aren’t buried on a separate page. Instead, we surfaced them exactly where users might need them. When reading about confidentiality, for example, a floating speech bubble might ask, "But are you sure you won't tell anyone what I'm sharing with you? If you go to training, you must talk about each other's cases, right?" Clicking reveals the answer in a new, distinct bubble—keeping the tone personal and conversational.
 
-![Example of integrated FAQ questions in the design.](/img/qanda.jpg "Example of integrated FAQ questions in the design.")
+![Example of integrated FAQ questions in the design.](/img/qanda.webp "Example of integrated FAQ questions in the design.")
 
 **Contact Page**
 
